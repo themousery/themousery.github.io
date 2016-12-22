@@ -34,6 +34,9 @@ function Ball() {
       this.speed[1] = -abs(this.speed[1]) + int(random(-1,1));
       beep.play();
     }
+    if (this.speed[0] === 0) {
+      this.speed[0] = 2;
+    }
   }
   
   this.show = function() {
