@@ -4,8 +4,7 @@ function Alien() {
   temp = [-182, W+90];
   this.x = temp[Math.floor(Math.random() * 2)];
   this.y = int(random(50, 200));
-  this.laserfire = frameCount/60;
-  this.born = frameCount
+  this.laserfire = counter/60;
   this.hp = 3;
   
   this.update = function() {
@@ -18,8 +17,8 @@ function Alien() {
       this.speed = abs(this.speed);
     }
     
-    if (int(frameCount/60) !== this.laserfire) {
-      this.laserfire = frameCount/60;
+    if (int(counter/60) !== this.laserfire) {
+      this.laserfire = counter/60;
       alasers.push(new AlienLaser(this.x,this.y));
     }
   }

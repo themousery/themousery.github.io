@@ -34,6 +34,7 @@ function setup() {
   aliens = [];
   alasers = [];
   score = 0;
+  counter = 0;
   gameover = false;
   textFont(font);
   noStroke();
@@ -63,10 +64,11 @@ function keyPressed() {
   if (gameover) {
     gameover = false;
     score = 0;
-    frameCount = 0;
+    counter = 0;
   }
 }
 function draw() {
+  counter +=1
   checkWindow();
   collisions();
   image(stars, 0, 0);
@@ -81,7 +83,7 @@ function draw() {
     aliens.push(new Alien());
   }
   
-  if (asteroids.length < 20 && frameCount/60 > asteroids.length/2) {
+  if (asteroids.length < 20 && counter/60 > asteroids.length/2) {
     asteroids.push(new Asteroid());
   }
   }
