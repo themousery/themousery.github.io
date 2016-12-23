@@ -70,7 +70,6 @@ function keyPressed() {
 function draw() {
   counter +=1
   checkWindow();
-  collisions();
   image(stars, 0, 0);
   
   if (!gameover) {
@@ -97,12 +96,29 @@ function draw() {
     }
   }
   
-  for (i = 0; i < asteroids.length; i++) {
+  for (i = asteroids.length; i > 0; i--) {
     asteroids[i].update();
     asteroids[i].show();
     
     if (asteroids[i].y >= H) {
       asteroids.splice(i, 1);
+    }
+    
+    if (collideRectRect(player.x, player.y, 44, 70, asteroids[i].x, asteroids[i].y, 46, 38)) {
+      player.hp -= 1;
+      hit.play();
+      asteroids.splice(i, 1);
+      hud.bleed = true;
+      break;
+    }
+    for (var j = 0; j < lasers.length; j++) {
+      if (collideRectRect(asteroids[i].x, asteroids[i].y, 46, 38, lasers[j].x, lasers[j].y, 3, 10)) {
+        score += 1;
+        explosion.play();
+        asteroids.splice(i, 1);
+        lasers.splice(j, 1);
+        break;
+      }
     }
   }
   
@@ -113,6 +129,13 @@ function draw() {
     if (powerups[i].y >= H) {
       powerups.splice(i, 1);
     }
+    
+    if (collideRectRect(player.x, player.y, 44, 70, powerups[i].x, powerups[i].y, 16, 15)) {
+      powerups.splice(i, 1);
+      player.hp += 1;
+      powerup.play();
+      break;
+    }
   }
   
   for (i = 0; i < alasers.length; i++) {
@@ -121,6 +144,14 @@ function draw() {
     
     if (alasers[i].y > H) {
       alasers.splice(i, 1);
+    }
+    
+    if (collideRectRect(player.x, player.y, 44, 70, alasers[i].x, alasers[i].y, 3, 10)) {
+      player.hp -= 1;
+      hit.play();
+      alasers.splice(i, 1);
+      hud.bleed = true;
+      break;
     }
   }
   
@@ -131,6 +162,15 @@ function draw() {
     if (aliens[i].hp <= 0) {
       aliens.splice(i, 1);
       score += 10;
+    }
+    
+    for (j = 0; j < lasers.length; j++) {
+      if (collideRectRect(aliens[i].x, aliens[i].y, 92, 48, lasers[j].x, lasers[j].y, 3, 10)) {
+        aliens[i].hp -= 1;
+        explosion.play();
+        lasers.splice(j, 1);
+        break;
+      }
     }
   }
   
