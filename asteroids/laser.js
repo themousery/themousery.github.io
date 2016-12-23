@@ -1,12 +1,26 @@
 function Laser() {
-  this.x = character.x + character.img.width/2 - 2
-  this.y = character.y + character.img.height/2 
+  this.x = mouseX - 2;
+  this.y = mouseY;
   
   this.update = function() {
-    this.left = this.x
-    this.right = this.x + 3
-    this.top = this.y
-    this.bottom = this.y + 10
-    this.y -= 9
+    this.y -= 9;
+  }
+  this.show = function() {
+    fill(75, 10, 200);
+    rect(this.x, this.y, 3, 10);
+  }
+}
+
+function AlienLaser(x, y) {
+  this.x = x + 46;
+  this.y = y + 4;
+  
+  this.update = function() {
+    this.y += 9;
+  }
+  
+  this.show = function() {
+    fill(10,200,75);
+    rect(this.x, this.y, 3, 10);
   }
 }
