@@ -139,7 +139,9 @@ function draw() {
   else {
     fill(255);
     textSize(120);
-    text("You Died!", W/2-324, 100);
+    text("You Died!", W/2-324, 400);
+    textSize(50);
+    text("press any key to continue", W/2-400, 700)
     
   }
   
