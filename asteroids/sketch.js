@@ -1,3 +1,4 @@
+var gameover;
 function preload() {
   music = loadSound("resources/sounds/Latin Industries.mp3");
   font = loadFont("resources/SF Pixelate.ttf");
@@ -56,8 +57,10 @@ function checkWindow() {
 }
 
 function mousePressed() {
-  lasers.push(new Laser());
-  laser.play();
+  if (!gameover) {
+    lasers.push(new Laser());
+    laser.play();
+  }
 }
 
 function keyPressed() {
@@ -69,6 +72,7 @@ function keyPressed() {
 }
 function draw() {
   counter +=1
+  collisions();
   checkWindow();
   image(stars, 0, 0);
   
@@ -96,7 +100,7 @@ function draw() {
     }
   }
   
-  for (i = asteroids.length; i > 0; i--) {
+  for (i = 0; i < asteroids.length; i++) {
     asteroids[i].update();
     asteroids[i].show();
     

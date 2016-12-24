@@ -1,6 +1,6 @@
 function collisions() {
 
-  for (i = asteroids.length; i > 0; i--) {
+  for (i = 0; i < asteroids.length; i++) {
     if (collideRectRect(player.x, player.y, 44, 70, asteroids[i].x, asteroids[i].y, 46, 38)) {
       player.hp -= 1;
       hit.play();
