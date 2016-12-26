@@ -17,7 +17,6 @@ function setup() {
       neighors[i][j]=0;
     }
   }
-  cells[5][4] = true;cells[5][5] = true;cells[5][6] = true;
   pause = false;
   fill(255);
   textFont(font);
