@@ -20,21 +20,13 @@ function blinker(x,y) {
 }
 
 function toad(x,y) {
-  cells[x+1][y] = true;
-  cells[x+2][y] = true;
-  cells[x+3][y] = true;
-  cells[x][y+1] = true;
-  cells[x+1][y+1] = true;
-  cells[x+2][y+1] = true;
+  blinker(x,y);
+  blinker(x+1,y+1);
 }
 
 function beacon(x,y) {
-  cells[x][y] = true;
-  cells[x+1][y] = true;
-  cells[x][y+1] = true;
-  cells[x+2][y+3] = true;
-  cells[x+3][y+2] = true;
-  cells[x+3][y+3] = true;
+  block(x,y);
+  block(x+2,y+2);
 }
 
 function block(x,y) {
@@ -65,10 +57,7 @@ function loaf(x,y) {
 
 function boat(x,y) {
   cells[x][y] = true;
-  cells[x][y+1] = true;
-  cells[x+1][y] = true;
-  cells[x+2][y+1] = true;
-  cells[x+1][y+2] = true;
+  tub(x,y);
 }
 
 function tub(x,y) {
@@ -76,6 +65,11 @@ function tub(x,y) {
   cells[x+1][y] = true;
   cells[x+2][y+1] = true;
   cells[x+1][y+2] = true;
+}
+
+function pulsar(x,y) {
+  beehive(x,y);
+  beehive(x+1,y);
 }
 
 function placer(x,y) {
@@ -108,5 +102,8 @@ function placer(x,y) {
   }
   else if (item == "Tub") {
     tub(x,y);
+  }
+  else if (item == "Pulsar") {
+    pulsar(x,y);
   }
 }

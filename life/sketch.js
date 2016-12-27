@@ -33,6 +33,7 @@ function setup() {
   sel.option("Loaf");
   sel.option("Boat");
   sel.option("Tub");
+  sel.option("Pulsar");
   sel.changed(changer);
   colour = [randint(0,255),randint(0,255),randint(0,255)];
   cdir = [choice([-1,1]),choice([-1,1]),choice([-1,1])];
