@@ -18,13 +18,14 @@ function setup() {
     }
   }
   pause = true;
-  fill(255);
   textFont(font);
   textSize(25);
   sel = createSelect();
   sel.position(W-100,5);
   sel.option("Single Cell");
+  sel.option("Pulsar");
   sel.option("Glider");
+  sel.option("Glider Gun");
   sel.option("Blinker");
   sel.option("Toad");
   sel.option("Beacon");
@@ -33,7 +34,6 @@ function setup() {
   sel.option("Loaf");
   sel.option("Boat");
   sel.option("Tub");
-  sel.option("Pulsar");
   sel.changed(changer);
   colour = [randint(0,255),randint(0,255),randint(0,255)];
   cdir = [choice([-1,1]),choice([-1,1]),choice([-1,1])];
@@ -95,7 +95,6 @@ function draw() {
   background(0);
   fill(colour[0],colour[1],colour[2],60);
   rect(int(mouseX/10)*10, int(mouseY/10)*10, 10, 10);
-  showPause();
   colours();
   if (!pause) {
     for (i = 0; i < board[0]; i++) {
@@ -133,4 +132,5 @@ function draw() {
       }
     }
   }
+  showPause();
 }
