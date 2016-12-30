@@ -8,7 +8,7 @@ function setup() {
   createCanvas(W,H);
   cells = [];
   neighors = [];
-  board = [int(W/10)+20,int(H/10)+20]
+  board = [int(W/10)+40,int(H/10)+40]
   for (i = 0; i < 200; i++) {
     cells.push([]);
     neighors.push([]);
@@ -21,9 +21,11 @@ function setup() {
   textFont(font);
   textSize(25);
   sel = createSelect();
-  sel.position(W-100,5);
+  sel.position(W-120,5);
   sel.option("Single Cell");
   sel.option("Pulsar");
+  sel.option("Pentadecathlon");
+  sel.option("Spaceship");
   sel.option("Glider");
   sel.option("Glider Gun");
   sel.option("Blinker");
@@ -39,13 +41,13 @@ function setup() {
   cdir = [choice([-1,1]),choice([-1,1]),choice([-1,1])];
 }
 
-function checkWindow() {
+function windowResized() {
   if (W !== windowWidth || H !== windowHeight) {
     W = windowWidth;
     H = windowHeight;
     resizeCanvas(W,H);
-    board = [int(W/10)+20,int(H/10)+20];
-    sel.position(W-100,5);
+    board = [int(W/10)+40,int(H/10)+40];
+    sel.position(W-120,5);
   }
 }
 
@@ -56,8 +58,8 @@ function mousePressed() {
   else if (mouseX < 75 && mouseY < 25 && pause) {
     pause = false;
   }
-  else if (!(mouseX > W-100 && mouseY < 20)){
-    placer(int(mouseX/10)+10, int(mouseY/10)+10);
+  else if (!(mouseX > W-130 && mouseY < 30)){
+    placer(int(mouseX/10)+20, int(mouseY/10)+20);
   }
 }
 
@@ -80,18 +82,14 @@ function showPause() {
 }
 
 function colours() {
-  i = randint(0,3);
-  if (colour[i] === 0) {
-    cdir[i] = 1
-  }
-  else if (colour[i] === 255) {
-    cdir[i] = -1
+  i = randint(0,2);
+  if (colour[i] === 0 || colour[i] === 255) {
+    cdir[i] = -cdir[i]
   }
   colour[i]+=cdir[i];
 }
 
 function draw() {
-  checkWindow();
   background(0);
   fill(colour[0],colour[1],colour[2],60);
   rect(int(mouseX/10)*10, int(mouseY/10)*10, 10, 10);
@@ -104,10 +102,9 @@ function draw() {
           cells[i][j]=false;
         }
         else {
-          temp = [0,-1,1]
-          for (a = 0; a < 3; a++) {
-            for (b = 0; b < 3; b++) {
-              if (cells[i+temp[a]][j+temp[b]] && !(a === 0 && b === 0)) {
+          for (a = -1; a <= 1; a++) {
+            for (b = -1; b <= 1; b++) {
+              if (cells[i+a][j+b] && !(a === 0 && b === 0)) {
                 neighors[i][j]++
               }
             }
@@ -128,7 +125,7 @@ function draw() {
         }
       }
       if (cells[i][j]) {
-        rect((i-10)*10,(j-10)*10,10,10);
+        rect((i-20)*10,(j-20)*10,10,10);
       }
     }
   }

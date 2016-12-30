@@ -34,7 +34,7 @@ function legalMoves() {
 }
 
 function mediumMove() {
-  for (i = 1; i <= 2; i++) {
+  for (i = 2; i >= 1; i--) {
     see = checkClose(i);
     if (see) {
       return see;
@@ -44,7 +44,7 @@ function mediumMove() {
 }
 
 function hardMove() {
-  for (i = 1; i <= 2; i++) {
+  for (i = 2; i >= 1; i--) {
     see = checkClose(i);
     if (see) {
       return see;

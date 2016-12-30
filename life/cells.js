@@ -6,17 +6,17 @@ function changer() {
 }
 
 function glider(x,y) {
-  cells[x][y] = true;
-  cells[x+1][y] = true;
-  cells[x+2][y] = true;
+  cells[x-1][y-1] = true;
+  cells[x][y-1] = true;
+  cells[x+1][y-1] = true;
+  cells[x-1][y] = true;
   cells[x][y+1] = true;
-  cells[x+1][y+2] = true;
 }
 
 function blinker(x,y) {
+  cells[x][y-1] = true;
   cells[x][y] = true;
   cells[x][y+1] = true;
-  cells[x][y+2] = true;
 }
 
 function toad(x,y) {
@@ -25,8 +25,8 @@ function toad(x,y) {
 }
 
 function beacon(x,y) {
-  block(x,y);
-  block(x+2,y+2);
+  block(x-1,y-1);
+  block(x+1,y+1);
 }
 
 function block(x,y) {
@@ -37,64 +37,81 @@ function block(x,y) {
 }
 
 function beehive(x,y) {
-  cells[x+1][y] = true;
-  cells[x+2][y] = true;
+  cells[x][y-1] = true;
+  cells[x+1][y-1] = true;
+  cells[x-1][y] = true;
   cells[x][y+1] = true;
-  cells[x+1][y+2] = true;
-  cells[x+2][y+2] = true;
-  cells[x+3][y+1] = true;
+  cells[x+1][y+1] = true;
+  cells[x+2][y] = true;
 }
 
 function loaf(x,y) {
+  cells[x-1][y-1] = true;
+  cells[x][y-1] = true;
+  cells[x-2][y] = true;
   cells[x+1][y] = true;
-  cells[x+2][y] = true;
-  cells[x][y+1] = true;
-  cells[x+3][y+1] = true;
-  cells[x+3][y+2] = true;
-  cells[x+1][y+2] = true;
-  cells[x+2][y+3] = true;
+  cells[x+1][y+1] = true;
+  cells[x-1][y+1] = true;
+  cells[x][y+2] = true;
 }
 
 function boat(x,y) {
-  cells[x][y] = true;
+  cells[x-1][y-1] = true;
   tub(x,y);
 }
 
 function tub(x,y) {
-  cells[x][y+1] = true;
+  cells[x-1][y] = true;
+  cells[x][y-1] = true;
   cells[x+1][y] = true;
-  cells[x+2][y+1] = true;
-  cells[x+1][y+2] = true;
+  cells[x][y+1] = true;
 }
 
 function pulsar(x,y) {
+  beehive(x-1,y);
   beehive(x,y);
-  beehive(x+1,y);
 }
 
 function glidergun(x,y) {
-  block(x,y+4);
-  blinker(x+10, y+4);
-  cells[x+11][y+3] = true;
-  cells[x+11][y+7] = true;
-  cells[x+12][y+2] = true;
-  cells[x+12][y+8] = true;
-  cells[x+13][y+2] = true;
-  cells[x+13][y+8] = true;
-  cells[x+14][y+5] = true;
-  cells[x+15][y+3] = true;
-  cells[x+15][y+7] = true;
-  blinker(x+16,y+4);
-  cells[x+17][y+5] = true;
-  blinker(x+20,y+2);
-  blinker(x+21,y+2);
-  cells[x+22][y+1] = true;
-  cells[x+22][y+5] = true;
-  cells[x+24][y] = true;
-  cells[x+24][y+1] = true;
-  cells[x+24][y+5] = true;
-  cells[x+24][y+6] = true;
-  block(x+34,y+2);
+  block(x-17,y+1);
+  blinker(x-7, y+2);
+  cells[x-6][y] = true;
+  cells[x-6][y+4] = true;
+  cells[x-5][y-1] = true;
+  cells[x-5][y+5] = true;
+  cells[x-4][y-1] = true;
+  cells[x-4][y+5] = true;
+  cells[x-3][y+2] = true;
+  cells[x-2][y] = true;
+  cells[x-2][y+4] = true;
+  blinker(x-1,y+2);
+  cells[x][y+2] = true;
+  blinker(x+3,y);
+  blinker(x+4,y);
+  cells[x+5][y-2] = true;
+  cells[x+5][y+2] = true;
+  cells[x+7][y-3] = true;
+  cells[x+7][y-2] = true;
+  cells[x+7][y+2] = true;
+  cells[x+7][y+3] = true;
+  block(x+17,y-1);
+}
+
+function pentadecathlon(x,y) {
+  for (i = -5; i < 5; i++) {
+    cells[x+i][y] = true;
+  }
+}
+
+function spaceship(x,y) {
+  cells[x-2][y-1] = true;
+  cells[x-2][y+1] = true;
+  cells[x+1][y+1] = true;
+  for (i = -1; i <= 2; i++) {
+    cells[x+i][y-2] = true;
+  }
+  cells[x+2][y-1] = true;
+  cells[x+2][y] = true;
 }
 
 function placer(x,y) {
@@ -133,5 +150,11 @@ function placer(x,y) {
   }
   else if (item == "Glider Gun") {
     glidergun(x,y);
+  }
+  else if (item == "Pentadecathlon") {
+    pentadecathlon(x,y);
+  }
+  else if (item == "Spaceship") {
+    spaceship(x,y);
   }
 }
