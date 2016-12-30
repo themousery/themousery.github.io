@@ -1,3 +1,5 @@
+var cnv;
+
 function preload() {
   font = loadFont("/libraries/SF Pixelate.ttf");
 }
@@ -62,7 +64,7 @@ function draw() {
   if (checkWin(board, 1)) {
     playing = false;
     over = true;
-    msg = 'you win'
+    msg = 'you win';
     resetBoard();
   }
   else if (checkWin(board, 2)) {
