@@ -1,0 +1,64 @@
+var board;
+
+function preload() {
+  font = loadFont("/libraries/SF Pixelate.ttf");
+}
+
+function setup() {
+  cnv = createCanvas(801,801);
+  windowResized();
+  resetBoard();
+  textFont(font);
+}
+
+function windowResized() {
+  x = (windowWidth - width) / 2;
+  y = (windowHeight - height) / 2;
+  cnv.position(x, y);
+}
+
+function mousePressed() {
+  x = int(mouseX/200);
+  y = int(mouseY/200);
+  for (i = -1; i <= 1; i++) {
+    for (j = -1; j <= 1; j++) {
+      try {
+        if (board[x+i][y+j] === 0 && i!==j && i!==-j) {
+          middle = board[x][y];
+          board[x][y] = board[x+i][y+j];
+          board[x+i][y+j] = middle;
+        }
+      }
+      catch(err){}
+    }
+  }
+}
+
+function keyPressed() {
+  if (detectWin()) {
+    resetBoard();
+  }
+}
+
+function detectWin() {
+  return (JSON.stringify(board[0].concat(board[1], board[2], board[3])) == '[1,5,9,13,2,6,10,14,3,7,11,15,4,8,12,0]')
+}
+
+function winScreen() {
+  background(255,255,255,200);
+  textAlign(CENTER, CENTER);
+  fill(100);
+  textSize(150);
+  text("You Win!", 400, 400);
+}
+
+function draw() {
+  background(240);
+  drawBoard();
+  fill(255, 255, 255, 70);
+  noStroke();
+  rect(int(mouseX/200)*200, int(mouseY/200)*200, 200, 200);
+  if (detectWin()) {
+    winScreen();
+  }
+}
