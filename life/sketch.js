@@ -1,5 +1,5 @@
 function preload() {
-  font = loadFont("SF Pixelate.ttf");
+  font = loadFont("/libraries/SF Pixelate.ttf");
 }
 
 function setup() {
