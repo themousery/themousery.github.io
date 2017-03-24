@@ -1,24 +1,70 @@
+<html>
 <head>
+  <title>Mousery Games</title>
+  <link rel="icon" href="favicon.ico">
+  <meta name="description" content="Some games and stuff">
+  <meta name="keywords" content="games, unblocked">
+  <meta name="author" content="Matthew Francis">
+
   <style>
   @font-face {
     font-family:stellar;
-    src: url(index_files/Stellar.otf);
+    src:url(index_files/Stellar.otf)
+  }
+  @font-face {
+    font-family:stellar-light;
+    src:url(index_files/Stellar-light.otf)
   }
   body {
+    margin:0;
+    padding:0;
+    height:100%;
     background-color:lightblue;
   }
   h1 {
-    color:blue;
-    font-size:75px;
-    text-align:center;
     font-family:stellar;
-    padding-bottom:10px;
+    color:black;
+    text-align:center;
+    font-size:75px;
+    width:50%;
+    transform:translateX(50%);
+    margin-bottom:10px;
+    padding-top:5px;
   }
   table {
     width:100%;
   }
-  td {
-    text-align:center;
+  .name {
+    color:white;
+    font-family:stellar-light;
+    font-size:15px;
+    padding-left:20px;
+    padding-top:10px;
+  }
+  .container {
+    min-height:100%;
+    position:relative;
+  }
+  .header {
+    background:#ccffff;
+    padding-bottom:5px;
+    background-image: url("index_files/rainbow.png");
+    background-repeat: repeat-x;
+  }
+  .body {
+    padding:10px;
+    padding-bottom:40px;
+  }
+  .footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:40px;
+    background:#101010;
+  }
+  .grid {}
+  .grid:hover .image {
+    opacity:0.3;
   }
   .image {
     opacity: 1;
@@ -28,42 +74,58 @@
     transition: .5s ease;
     backface-visibility: hidden;
     text-align:center;
+    padding-top:0;
   }
-  .container {
-    text-align:center;
-  }
-  .container:hover .image {
-    opacity:0.3;
+  .twitter {
+    float:right;
+    transform:translateY(-70%);
+    padding-right:20px;
   }
   </style>
-
-  <title>Mousery Games</title>
-  <link rel="icon" href="favicon.ico"></link>
 </head>
+
 <body>
-  <h1>Mousery Games</h1>
-  <table>
-    <tr>
-      <td>
-        <div class="container">
-          <a href="pong"><img src="index_files/pong.png" class="image"></img></a>
-        </div>
-      </td>
-      <td>
-        <div class="container">
-          <a href="life"><img src="index_files/life.png" class="image"></img></a>
-        </div>
-      </td>
-      <td>
-        <div class="container">
-          <a href="tictactoe"><img src="index_files/tictactoe.png" class="image"></img></a>
-        </div>
-      </td>
-      <td>
-        <div class="container">
-          <a href="slidingpuzzle"><img src="index_files/slidingpuzzle.png" class="image"></img></a>
-        </div>
-      </td>
-    </tr>
-  </table>
+  <div class="container">
+
+    <div class="header">
+      <h1><img src="index_files/mouse.png" style="vertical-align:middle;padding-right:20px;padding-bottom:0;"></img>Mousery Games</h1>
+    </div>
+
+    <div class="body">
+      <table>
+        <tr>
+          <td>
+            <div class="grid">
+              <a href="pong"><img class="image" src="index_files/pong.png"></a>
+            </div>
+          </td>
+          <td>
+            <div class="grid">
+              <a href="life"><img class="image" src="index_files/life.png"></a>
+            </div>
+          </td>
+          <td>
+            <div class="grid">
+              <a href="tictactoe"><img class="image" src="index_files/tictactoe.png"></a>
+            </div>
+          </td>
+          <td>
+            <div class="grid">
+              <a href="slidingpuzzle"><img class="image" src="index_files/slidingpuzzle.png"></a>
+            </div>
+          </td>
+          <td>
+            <div class="grid">
+              <a href="livingart"><img class="image" src="index_files/livingart.png"></a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="footer">
+      <div class="name">by Matthew Francis</div>
+      <a href="twitter.com/MouseryGames"><img src="index_files/twitter.png" class="twitter"></img></a>
+    </div>
+  </div>
 </body>
