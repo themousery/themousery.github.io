@@ -1,0 +1,40 @@
+<head>
+  <style>
+  body {
+    margin:0;
+    padding:0;
+  }
+  .image {
+    transition: .5s ease;
+    padding:0px;
+    margin:0px;
+    /*border:1px solid blue;*/
+  }
+  .image:hover{
+    opacity: 0.7;
+  }
+  .background {
+    background:white;
+  }
+  </style>
+  <script>
+  window.onresize = function() {
+    cols = Math.floor(window.innerWidth/400);
+    width = window.innerWidth/cols-12;
+    for (i = 0; i < images.length; i++) {
+      images[i].width = width;
+    }
+  }
+  window.onload = function() {
+    images = document.getElementsByClassName("image");
+    window.onresize();
+  }
+  </script>
+<head>
+<body>
+  <a href="pong"><img class="image" src="index_files/pong.png"></img></a>
+  <a href="life"><img class="image" src="index_files/life.png"></img></a>
+  <a href="tictactoe"><img class="image" src="index_files/tictactoe.png"></img></a>
+  <a href="slidingpuzzle"><img class="image" src="index_files/slidingpuzzle.png"></img></a>
+  <a href="livingart"><img class="image" src="index_files/livingart.png"></img></a>
+</body>

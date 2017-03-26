@@ -5,15 +5,16 @@
   <meta name="description" content="Some games and stuff">
   <meta name="keywords" content="games, unblocked">
   <meta name="author" content="Matthew Francis">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
   @font-face {
     font-family:stellar;
-    src:url(index_files/Stellar.otf)
+    src:url(index_files/Stellar.otf);
   }
   @font-face {
     font-family:stellar-light;
-    src:url(index_files/Stellar-light.otf)
+    src:url(index_files/Stellar-light.otf);
   }
   body {
     margin:0;
@@ -23,7 +24,7 @@
   }
   h1 {
     font-family:stellar;
-    color:black;
+    color:white;
     text-align:center;
     font-size:75px;
     margin-bottom:10px;
@@ -31,6 +32,11 @@
   }
   table {
     width:100%;
+  }
+  iframe {
+    width:100%;
+    padding:0;
+    border:0;
   }
   .name {
     color:white;
@@ -45,11 +51,9 @@
   }
   .header {
     padding-bottom:5px;
-    background: radial-gradient(circle,red,orange,yellow,green,blue,indigo,violet);
-    /*background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);*/
+    background: #101010
   }
   .body {
-    padding:10px;
     padding-bottom:40px;
   }
   .footer {
@@ -59,26 +63,23 @@
     height:40px;
     background:#101010;
   }
-  .grid {}
-  .grid:hover .image {
-    opacity:0.3;
-  }
-  .image {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: .5s ease;
-    backface-visibility: hidden;
-    text-align:center;
-    padding-top:0;
-  }
   .twitter {
     float:right;
     transform:translateY(-70%);
     padding-right:20px;
   }
   </style>
+  <script>
+  window.onresize = function() {
+    height = window.innerHeight-162;
+    frame.height = height.toString() + "px";
+  }
+  window.onload = function() {
+    frame = document.getElementById("frame");
+    window.onresize();
+  }
+
+  </script>
 </head>
 
 <body>
@@ -89,35 +90,7 @@
     </div>
 
     <div class="body">
-      <table>
-        <tr>
-          <td>
-            <div class="grid">
-              <a href="pong"><img class="image" src="index_files/pong.png"></a>
-            </div>
-          </td>
-          <td>
-            <div class="grid">
-              <a href="life"><img class="image" src="index_files/life.png"></a>
-            </div>
-          </td>
-          <td>
-            <div class="grid">
-              <a href="tictactoe"><img class="image" src="index_files/tictactoe.png"></a>
-            </div>
-          </td>
-          <td>
-            <div class="grid">
-              <a href="slidingpuzzle"><img class="image" src="index_files/slidingpuzzle.png"></a>
-            </div>
-          </td>
-          <td>
-            <div class="grid">
-              <a href="livingart"><img class="image" src="index_files/livingart.png"></a>
-            </div>
-          </td>
-        </tr>
-      </table>
+      <iframe src="body.html" id="frame"></iframe>
     </div>
 
     <div class="footer">
