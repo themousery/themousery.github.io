@@ -1,5 +1,5 @@
 function preload() {
-  font = loadFont("/libraries/SF Pixelate.ttf");
+  font = loadFont("/index_files/Stellar.otf");
 }
 
 function setup() {
@@ -58,18 +58,34 @@ function mousePressed() {
   else if (mouseX < 75 && mouseY < 25 && pause) {
     pause = false;
   }
+  else if (mouseX > 75 && mouseX < 150 && mouseY < 25) {
+    if (confirm("Are you sure you want to clear the board?")) {
+      cells = [];
+      neighors = [];
+      board = [int(W/10)+40,int(H/10)+40]
+      for (i = 0; i < 200; i++) {
+        cells.push([]);
+        neighors.push([]);
+        for (j = 0; j < 200; j++) {
+          cells[i][j] = false;
+          neighors[i][j] = 0;
+        }
+      }
+    }
+  }
   else if (!(mouseX > W-130 && mouseY < 30)){
     placer(int(mouseX/10)+20, int(mouseY/10)+20);
   }
 }
 
 function showPause() {
-  if (mouseX < 100 && mouseY < 25 && !pause) {
+  if (mouseX < 75 && mouseY < 25 && !pause) {
     fill(colour);
   }
   else if (mouseX < 75 && mouseY < 25 && pause) {
     fill(colour);
   }
+
   else {
     fill(255);
   }
@@ -79,6 +95,16 @@ function showPause() {
   else {
     text("play", 0,20);
   }
+}
+
+function showClear() {
+  if (mouseX > 75 && mouseX < 150 && mouseY < 25) {
+    fill(colour);
+  }
+  else {
+    fill(255);
+  }
+  text("clear",100,20);
 }
 
 function colours() {
@@ -130,4 +156,5 @@ function draw() {
     }
   }
   showPause();
+  showClear();
 }

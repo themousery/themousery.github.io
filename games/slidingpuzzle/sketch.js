@@ -5,7 +5,7 @@ function preload() {
 }
 
 function setup() {
-  cnv = createCanvas(801,801);
+  cnv = createCanvas(601,601);
   windowResized();
   resetBoard();
   textFont(font);
@@ -18,8 +18,8 @@ function windowResized() {
 }
 
 function mousePressed() {
-  x = int(mouseX/200);
-  y = int(mouseY/200);
+  x = int(mouseX/150);
+  y = int(mouseY/150);
   for (i = -1; i <= 1; i++) {
     for (j = -1; j <= 1; j++) {
       try {
@@ -48,8 +48,8 @@ function winScreen() {
   background(255,255,255,200);
   textAlign(CENTER, CENTER);
   fill(100);
-  textSize(150);
-  text("You Win!", 400, 400);
+  textSize(113);
+  text("You Win!", 300, 300);
 }
 
 function draw() {
@@ -57,7 +57,7 @@ function draw() {
   drawBoard();
   fill(255, 255, 255, 70);
   noStroke();
-  rect(int(mouseX/200)*200, int(mouseY/200)*200, 200, 200);
+  rect(int(mouseX/150)*150, int(mouseY/150)*150, 150, 150);
   if (detectWin()) {
     winScreen();
   }

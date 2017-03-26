@@ -16,8 +16,11 @@
   </style>
   <script>
   window.onresize = function() {
-    cols = Math.floor(window.innerWidth/400);
+    cols = Math.floor(window.innerWidth/300);
     width = window.innerWidth/cols-12;
+    if (window.innerWidth < 600) {
+      width = window.innerWidth;
+    }
     for (i = 0; i < images.length; i++) {
       images[i].width = width;
     }

@@ -5,11 +5,11 @@ function drawBoard() {
       if (board[i][j] !== 0) {
         fill(30,200,200)
         stroke(0);
-        rect(i*200,j*200, 200, 200);
+        rect(i*150,j*150, 150, 150);
         fill(255);
         noStroke();
-        textSize(175);
-        text(board[i][j], i*200+25, j*200+50);
+        textSize(131);
+        text(board[i][j], i*150+25, j*150+50);
       }
     }
   }

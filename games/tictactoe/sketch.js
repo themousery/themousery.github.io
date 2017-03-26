@@ -1,11 +1,11 @@
 var cnv;
 
 function preload() {
-  font = loadFont("/libraries/SF Pixelate.ttf");
+  font = loadFont("/index_files/Stellar.otf");
 }
 
 function setup() {
-  cnv = createCanvas(800,800);
+  cnv = createCanvas(575,575);
   windowResized();
   initMenu()
   textFont(font);
@@ -31,31 +31,28 @@ function windowResized() {
 }
 
 function mousePressed() {
-  if (playing && turn === 1) {
-    if (board[int(mouseX/275)][int(mouseY/275)] === 0) {
-      board[int(mouseX/275)][int(mouseY/275)] = 1;
+  if (over) {
+    over = false;
+  }
+  else if (playing && turn === 1) {
+    if (board[int(mouseX/200)][int(mouseY/200)] === 0) {
+      board[int(mouseX/200)][int(mouseY/200)] = 1;
       turn = 2;
     }
   }
   else {
-    if (collidePointRect(mouseX,mouseY,800/2-80,300-13,160,26)) {
+    if (collidePointRect(mouseX,mouseY,600/2-80,300-13,160,26)) {
       playing = true;
       mode = 0;
     }
-    if (collidePointRect(mouseX,mouseY,800/2-80,450-13,160,26)) {
+    if (collidePointRect(mouseX,mouseY,600/2-80,450-13,160,26)) {
       playing = true;
       mode = 1;
     }
-    if (collidePointRect(mouseX,mouseY,800/2-80,600-13,160,26)) {
-      playing = true;
-      mode = 2;
-    }
-  }
-}
-
-function keyPressed() {
-  if (over) {
-    over = false;
+    // if (collidePointRect(mouseX,mouseY,600/2-80,600-13,160,26)) {
+    //   playing = true;
+    //   mode = 2;
+    // }
   }
 }
 
@@ -89,15 +86,15 @@ function draw() {
         move = hardMove();
         board[move[0]][move[1]] = 2;
       }
-      else if (mode === 2) {
-        move = impossibleMove();
-        board[move[0]][move[1]] = 2;
-      }
+      // else if (mode === 2) {
+      //   move = impossibleMove();
+      //   board[move[0]][move[1]] = 2;
+      // }
       turn = 1;
     }
     else {
       fill(0, 0, 200, 50);
-      rect(int(mouseX/275)*275, int(mouseY/275)*275, 250, 250);
+      rect(int(mouseX/200)*200, int(mouseY/200)*200, 200, 200);
     }
     drawBoard();
   }
@@ -105,14 +102,14 @@ function draw() {
     fill(0);
     textSize(40);
     noStroke();
-    text("tic tac toe",400,100);
+    text("tic tac toe",300,100);
     drawMenu();
   }
   else if (over) {
     fill(0);
     textSize(40);
-    text(msg,400,400);
+    text(msg,287,287);
     textSize(30);
-    text('press any key to restart',400,700);
+    text('click anywhere to restart',287,500);
   }
 }

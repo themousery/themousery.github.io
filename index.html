@@ -71,29 +71,47 @@
   </style>
   <script>
   window.onresize = function() {
-    height = window.innerHeight-162;
+    height = window.innerHeight-(header.scrollHeight+footer.scrollHeight);
     frame.height = height.toString() + "px";
+    if (window.innerWidth < 630) {
+      title.style.fontSize = "50px";
+      logo.style.width = "96px"
+      logo.style.height = "96px";
+    }
+    if (window.innerWidth < 450) {
+      title.style.fontSize = "30px";
+      logo.style.width = "64px";
+      logo.style.height = "64px";
+    }
+    if (window.innerWidth > 630) {
+      title.style.fontSize = "75px";
+      logo.style.width = "96px"
+      logo.style.height = "96px";
+    }
   }
   window.onload = function() {
     frame = document.getElementById("frame");
+    title = document.getElementById("title");
+    logo = document.getElementById("logo");
+    header = document.getElementById("header");
+    footer = document.getElementById("footer");
     window.onresize();
   }
-
   </script>
 </head>
 
 <body>
   <div class="container">
 
-    <div class="header">
-      <h1><img src="index_files/mouse.png" style="vertical-align:middle;padding-right:20px;padding-bottom:0;"></img>Mousery Games</h1>
+    <div id="header" class="header">
+      <h1 id="title"><img id="logo" src="index_files/mouse.png" style="vertical-align:middle;padding-right:20px;padding-bottom:0;"></img>Mousery Games</h1>
     </div>
 
     <div class="body">
       <iframe src="index_files/body.html" id="frame"></iframe>
     </div>
 
-    <div class="footer">
+    <div id="footer" class="footer">
       <div class="name">by Matthew Francis</div>
       <a href="https://twitter.com/MouseryGames" target="_blank"><img src="index_files/twitter.png" class="twitter"></img></a>
     </div>
