@@ -1,7 +1,7 @@
 var board;
 
 function preload() {
-  font = loadFont("/libraries/SF Pixelate.ttf");
+  font = loadFont("/index_files/Stellar.otf");
 }
 
 function setup() {
@@ -9,6 +9,14 @@ function setup() {
   windowResized();
   resetBoard();
   textFont(font);
+  done = false;
+  while (!done) {
+    colour = [floor(random(255)),floor(random(255)),floor(random(255))];
+    if (colour[0]+colour[1]+colour[2] < 600) {
+      done = true;
+    }
+  }
+  textAlign(CENTER,CENTER)
 }
 
 function windowResized() {
