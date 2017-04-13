@@ -57,7 +57,7 @@ function winScreen() {
   textAlign(CENTER, CENTER);
   fill(100);
   textSize(113);
-  text("You Win!", 300, 300);
+  text("Julian sucks!", 300, 300);
 }
 
 function draw() {
