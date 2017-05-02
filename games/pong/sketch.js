@@ -26,6 +26,7 @@ function checkWindow() {
 
 function mousePressed() {
   balls.push(new Ball());
+  return false;
 }
 
 function draw() {

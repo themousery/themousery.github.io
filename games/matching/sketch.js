@@ -80,6 +80,7 @@ function mousePressed() {
       }
     }
   }
+  return false;
 }
 
 function drawWin() {

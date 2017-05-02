@@ -54,6 +54,7 @@ function mousePressed() {
     //   mode = 2;
     // }
   }
+  return false;
 }
 
 function draw() {
@@ -112,15 +113,4 @@ function draw() {
     textSize(30);
     text('click anywhere to restart',287,500);
   }
-}
-
-
-//prevent scrolling on mobile
-document.addEventListener('touchstart', this.touchstart);
-document.addEventListener('touchmove', this.touchmove);
-function touchstart(e) {
-    e.preventDefault()
-}
-function touchmove(e) {
-    e.preventDefault()
 }

@@ -40,6 +40,7 @@ function mousePressed() {
       catch(err){}
     }
   }
+  return false;
 }
 
 function keyPressed() {
@@ -69,14 +70,4 @@ function draw() {
   if (detectWin()) {
     winScreen();
   }
-}
-
-//prevent scrolling on mobile
-document.addEventListener('touchstart', this.touchstart);
-document.addEventListener('touchmove', this.touchmove);
-function touchstart(e) {
-    e.preventDefault()
-}
-function touchmove(e) {
-    e.preventDefault()
 }

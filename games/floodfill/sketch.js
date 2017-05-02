@@ -26,6 +26,10 @@ function mouseReleased() {
   }
 }
 
+function mousePressed() {
+  return false;
+}
+
 function flood(node, target, replacement) {
   if (board[node[0]][node[1]] === i) {
     return
