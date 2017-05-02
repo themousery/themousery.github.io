@@ -40,6 +40,7 @@ function mousePressed() {
       fireflies.push(new Firefly(mouseX, mouseY));
     }
   }
+  return false;
 }
 
 function keyPressed() {
