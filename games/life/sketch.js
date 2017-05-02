@@ -78,6 +78,10 @@ function mousePressed() {
   }
 }
 
+function mouseDragged(){
+  return false;
+}
+
 function showPause() {
   if (mouseX < 75 && mouseY < 25 && !pause) {
     fill(colour);
