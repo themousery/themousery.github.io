@@ -52,13 +52,13 @@ function windowResized() {
 }
 
 function mousePressed() {
-  if (mouseX < 125 && mouseY < 50 && !pause) {
+  if (mouseX < 75 && mouseY < 75 && !pause) {
     pause = true;
   }
-  else if (mouseX < 100 && mouseY < 50 && pause) {
+  else if (mouseX < 75 && mouseY < 75 && pause) {
     pause = false;
   }
-  else if (mouseX > 125 && mouseX < 175 && mouseY < 50) {
+  else if (mouseX > 75 && mouseX < 175 && mouseY < 75) {
     if (confirm("Are you sure you want to clear the board?")) {
       cells = [];
       neighors = [];
@@ -83,10 +83,10 @@ function mouseDragged(){
 }
 
 function showPause() {
-  if (mouseX < 75 && mouseY < 25 && !pause) {
+  if (mouseX < 75 && mouseY < 75 && !pause) {
     fill(colour);
   }
-  else if (mouseX < 75 && mouseY < 25 && pause) {
+  else if (mouseX < 75 && mouseY < 75 && pause) {
     fill(colour);
   }
 
@@ -102,7 +102,7 @@ function showPause() {
 }
 
 function showClear() {
-  if (mouseX > 75 && mouseX < 150 && mouseY < 25) {
+  if (mouseX > 75 && mouseX < 175 && mouseY < 75) {
     fill(colour);
   }
   else {
