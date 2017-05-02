@@ -52,13 +52,13 @@ function windowResized() {
 }
 
 function mousePressed() {
-  if (mouseX < 100 && mouseY < 25 && !pause) {
+  if (mouseX < 125 && mouseY < 50 && !pause) {
     pause = true;
   }
-  else if (mouseX < 75 && mouseY < 25 && pause) {
+  else if (mouseX < 100 && mouseY < 50 && pause) {
     pause = false;
   }
-  else if (mouseX > 75 && mouseX < 150 && mouseY < 25) {
+  else if (mouseX > 125 && mouseX < 175 && mouseY < 50) {
     if (confirm("Are you sure you want to clear the board?")) {
       cells = [];
       neighors = [];
