@@ -40,7 +40,6 @@ function mousePressed() {
       fireflies.push(new Firefly(mouseX, mouseY));
     }
   }
-  return false;
 }
 
 function keyPressed() {
@@ -53,6 +52,7 @@ function mouseDragged() {
   if (sel.value() === 'free-draw' && !(mouseX>width-90 && mouseY<20)) {
     fireflies.push(new Firefly(mouseX, mouseY));
   }
+  return false
 }
 
 
