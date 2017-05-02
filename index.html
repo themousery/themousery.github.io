@@ -37,6 +37,7 @@
     width:100%;
     padding:0;
     border:0;
+    height:100%;
     overflow:auto;
     -webkit-overflow-scrolling:touch;
   }
@@ -58,10 +59,6 @@
   .body {
     padding-bottom:40px;
   }
-  .scroll-wrapper {
-    -webkit-overflow-scrolling: touch;
-  	overflow-y: scroll;
-  }
   .footer {
     position:absolute;
     bottom:0;
@@ -79,6 +76,8 @@
   window.onresize = function() {
     height = window.innerHeight-(header.scrollHeight+footer.scrollHeight);
     frame.style.height = height.toString() + "px";
+    frame.height = height.toString() + "px";
+    frame.scrollHeight = height
     if (window.innerWidth < 630) {
       title.style.fontSize = "50px";
       logo.style.width = "96px"
@@ -96,7 +95,7 @@
     }
   }
   window.onload = function() {
-    frame = document.getElementById("frame");
+    frame = document.getElementById("maindawg");
     title = document.getElementById("title");
     logo = document.getElementById("logo");
     header = document.getElementById("header");
@@ -113,7 +112,7 @@
       <h1 id="title"><img id="logo" src="index_files/mouse.png" style="vertical-align:middle;padding-right:20px;padding-bottom:0;"></img>Mousery Games</h1>
     </div>
 
-    <div class="body">
+    <div class="body" id="maindawg">
       <iframe src="index_files/body.html" id="frame"></iframe>
     </div>
 
