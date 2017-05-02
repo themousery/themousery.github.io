@@ -94,10 +94,10 @@ function showPause() {
     fill(255);
   }
   if (!pause) {
-    text("pause", 0,20);
+    text("pause", 20,40);
   }
   else {
-    text("play", 0,20);
+    text("play", 20,40);
   }
 }
 
@@ -108,7 +108,7 @@ function showClear() {
   else {
     fill(255);
   }
-  text("clear",100,20);
+  text("clear",100,40);
 }
 
 function colours() {
