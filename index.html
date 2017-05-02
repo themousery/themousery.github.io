@@ -57,10 +57,11 @@
   }
   .body {
     padding-bottom:40px;
+  }
+  .scroll-wrapper {
     -webkit-overflow-scrolling: touch;
   	overflow-y: scroll;
   }
-  .body iframe{}
   .footer {
     position:absolute;
     bottom:0;
@@ -77,7 +78,7 @@
   <script>
   window.onresize = function() {
     height = window.innerHeight-(header.scrollHeight+footer.scrollHeight);
-    frame.height = height.toString() + "px";
+    frame.style.height = height.toString() + "px";
     if (window.innerWidth < 630) {
       title.style.fontSize = "50px";
       logo.style.width = "96px"
