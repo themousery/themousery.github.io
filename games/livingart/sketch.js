@@ -6,7 +6,7 @@ function setup() {
   sel = createSelect();
   sel.option('free-draw');
   sel.option('colonies');
-  sel.position(width-90, 5);
+  sel.position(width-180, 5);
 }
 
 function draw() {
