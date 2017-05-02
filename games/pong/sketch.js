@@ -1,6 +1,5 @@
 function preload() {
   font = loadFont("resources/SF Pixelate.ttf");
-  music = loadSound("resources/Voice Over Under.mp3");
   beep = loadSound("resources/beep.wav");
 }
 
@@ -11,7 +10,6 @@ function setup() {
   score = 0;
   balls = [];
   textFont(font);
-  music.play();
   player = new Player();
 }
 
