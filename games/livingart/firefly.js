@@ -23,62 +23,62 @@ function Firefly(x, y, type) {
   }
 
   this.update = function() {
-    if (this.type=="random") {
+    // if (this.type=="random") {
       this.gorand();
-    }
-    else if (this.type=="left"){
-      go = floor(random(2));
-      if (go){
-        this.x-=1
-      }
-      else{
-        this.gorand();
-      }
-    }
-    else if (this.type=="right"){
-      go = floor(random(2));
-      if (go){
-        this.x+=1
-      }
-      else{
-        this.gorand();
-      }
-    }
-    else if (this.type=="up"){
-      go = floor(random(2));
-      if (go){
-        this.y-=1
-      }
-      else{
-        this.gorand();
-      }
-    }
-    else if (this.type=="down"){
-      go = floor(random(2));
-      if (go){
-        this.y+=1
-      }
-      else{
-        this.gorand();
-      }
-    }
-    else if (this.type=="follower"){
-      diffx = mouseX-this.x
-      diffy = mouseY-this.y
-      if (diffx == 0) {
-        diffx = 1;
-      }
-      if (diffy == 0){
-        diffy = 1;
-      }
-      r = ceil(random( abs(diffx) + abs(diffy) ));
-      if (r <= abs(diffx)){
-        this.x += diffx / abs(diffx)
-      }
-      else{
-        this.y += diffy / abs(diffy)
-      }
-    }
+    // }
+    // else if (this.type=="left"){
+    //   go = floor(random(2));
+    //   if (go){
+    //     this.x-=1
+    //   }
+    //   else{
+    //     this.gorand();
+    //   }
+    // }
+    // else if (this.type=="right"){
+    //   go = floor(random(2));
+    //   if (go){
+    //     this.x+=1
+    //   }
+    //   else{
+    //     this.gorand();
+    //   }
+    // }
+    // else if (this.type=="up"){
+    //   go = floor(random(2));
+    //   if (go){
+    //     this.y-=1
+    //   }
+    //   else{
+    //     this.gorand();
+    //   }
+    // }
+    // else if (this.type=="down"){
+    //   go = floor(random(2));
+    //   if (go){
+    //     this.y+=1
+    //   }
+    //   else{
+    //     this.gorand();
+    //   }
+    // }
+    // else if (this.type=="follower"){
+    //   diffx = mouseX-this.x
+    //   diffy = mouseY-this.y
+    //   if (diffx == 0) {
+    //     diffx = 1;
+    //   }
+    //   if (diffy == 0){
+    //     diffy = 1;
+    //   }
+    //   r = ceil(random( abs(diffx) + abs(diffy) ));
+    //   if (r <= abs(diffx)){
+    //     this.x += diffx / abs(diffx)
+    //   }
+    //   else{
+    //     this.y += diffy / abs(diffy)
+    //   }
+    // }
     this.hu++;
     if (this.hu >= 360) {
       this.hu = 0;
