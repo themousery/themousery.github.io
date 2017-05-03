@@ -4,23 +4,23 @@ function Firefly(x, y, type) {
   this.type = type
   this.hu = 0;
 
-  this.gorand = function() {
-    r = floor(random(4));
-    switch (r) {
-      case 0:
-        this.y-=1;
-        break;
-      case 1:
-        this.x+=1;
-        break;
-      case 2:
-        this.y+=1;
-        break;
-      case 3:
-        this.x-=1;
-        break;
-    }
-  }
+  // this.gorand = function() {
+  //   r = floor(random(4));
+  //   switch (r) {
+  //     case 0:
+  //       this.y-=1;
+  //       break;
+  //     case 1:
+  //       this.x+=1;
+  //       break;
+  //     case 2:
+  //       this.y+=1;
+  //       break;
+  //     case 3:
+  //       this.x-=1;
+  //       break;
+  //   }
+  // }
 
   this.update = function() {
     // if (this.type=="random") {
@@ -79,15 +79,15 @@ function Firefly(x, y, type) {
     //     this.y += diffy / abs(diffy)
     //   }
     // }
-    this.hu++;
-    if (this.hu >= 360) {
-      this.hu = 0;
-    }
+    // this.hu++;
+    // if (this.hu >= 360) {
+    //   this.hu = 0;
+    // }
   }
 
   this.show = function() {
-    off.colorMode(HSB);
-    off.stroke(this.hu, 100, 100);
-    off.point(this.x, this.y);
+    // off.colorMode(HSB);
+    // off.stroke(this.hu, 100, 100);
+    // off.point(this.x, this.y);
   }
 }
