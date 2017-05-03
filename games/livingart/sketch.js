@@ -68,17 +68,17 @@ function diff(v1, v2) {
   return (v1>v2) ? v1-v2 : v2-v1;
 }
 
-// function mousePressed() {
-//   if (mouseX < 75 && mouseY < 75) {
-//     pause = !pause;
-//   }
-//   else if (mouseX > 75 && mouseX < 175 && mouseY < 75) {
-//     if (confirm("Are you sure you want to clear the screen?")) {
-//       off.background(0);
-//     }
-//     fireflies = [];
-//   }
-// }
+function mousePressed() {
+  if (mouseX < 75 && mouseY < 75) {
+    pause = !pause;
+  }
+  else if (mouseX > 75 && mouseX < 175 && mouseY < 75) {
+    if (confirm("Are you sure you want to clear the screen?")) {
+      off.background(0);
+    }
+    fireflies = [];
+  }
+}
 
 function keyPressed() {
   if (keyCode === 32) {
@@ -90,5 +90,5 @@ function keyPressed() {
   // if (!(mouseX>width-90 && mouseY<20) && !(mouseX < 175 && mouseY < 75)) {
   //   fireflies.push(new Firefly(mouseX, mouseY, sel.value()));
   // }
-  // return false 
+  // return false
 // }
