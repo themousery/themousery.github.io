@@ -4,7 +4,7 @@ function preload() {
 
 function setup() {
   cnv = createCanvas(windowWidth, windowHeight);
-  off = createGraphics(windowWidth, windowHeight);
+  off = createGraphics(displayWidth, displayHeight);
   fireflies = [];
   background(0);
   pause = false;
@@ -90,5 +90,5 @@ function mouseDragged() {
   if (!(mouseX>width-90 && mouseY<20) && !(mouseX < 175 && mouseY < 75)) {
     fireflies.push(new Firefly(mouseX, mouseY, sel.value()));
   }
-  return false
+  // return false
 }
