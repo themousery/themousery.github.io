@@ -24,7 +24,7 @@ function Firefly(x, y, type) {
 
   this.update = function() {
     // if (this.type=="random") {
-      this.gorand();
+      // this.gorand();
     // }
     // else if (this.type=="left"){
     //   go = floor(random(2));
