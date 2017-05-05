@@ -86,8 +86,8 @@ function Firefly(x, y, type) {
   }
 
   this.show = function() {
-    off.colorMode(HSB);
-    off.stroke(this.hu, 100, 100);
-    off.point(this.x, this.y);
+    colorMode(HSB);
+    stroke(this.hu, 100, 100);
+    point(this.x, this.y);
   }
 }

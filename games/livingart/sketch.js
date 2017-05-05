@@ -4,7 +4,7 @@ function preload() {
 
 function setup() {
   cnv = createCanvas(windowWidth, windowHeight);
-  off = createGraphics(displayWidth, displayHeight);
+  // off = createGraphics(displayWidth, displayHeight);
   fireflies = [];
   background(0);
   pause = false;
