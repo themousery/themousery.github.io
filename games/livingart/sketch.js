@@ -47,8 +47,8 @@ function showClear() {
 }
 
 function draw() {
-  background(0)
-  image(off,0,0)
+  // background(0)
+  // image(off,0,0)
   for (i = 0; i < fireflies.length; i++) {
     if (!pause) {
       fireflies[i].update();
