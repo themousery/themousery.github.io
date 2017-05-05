@@ -86,9 +86,9 @@ function keyPressed() {
   }
 }
 
-// function mouseDragged() {
-  // if (!(mouseX>width-90 && mouseY<20) && !(mouseX < 175 && mouseY < 75)) { 
-  //   fireflies.push(new Firefly(mouseX, mouseY, sel.value()));
-  // }
-  // return false
-// }
+function mouseDragged() {
+  if (!(mouseX>width-90 && mouseY<20) && !(mouseX < 175 && mouseY < 75)) {
+    fireflies.push(new Firefly(mouseX, mouseY, sel.value()));
+  }
+  return false
+}
