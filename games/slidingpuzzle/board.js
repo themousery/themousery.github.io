@@ -1,5 +1,5 @@
 function drawBoard() {
-  textAlign(LEFT, TOP);
+  textAlign(CENTER, CENTER);
   for (i = 0; i < 4; i++) {
     for (j = 0; j < 4; j++) {
       if (board[i][j] !== 0) {
@@ -9,8 +9,8 @@ function drawBoard() {
         rect(i*150,j*150, 150, 150);
         fill(255);
         noStroke();
-        textSize(131);
-        text(board[i][j], i*150+30, j*150+25);
+        textSize(120);
+        text(board[i][j], i*150+75, j*150+75);
       }
     }
   }
