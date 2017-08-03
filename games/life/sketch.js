@@ -1,5 +1,5 @@
 function preload() {
-  font = loadFont("/index_files/Stellar.otf");
+  font = loadFont("/files/Stellar.otf");
 }
 
 function setup() {

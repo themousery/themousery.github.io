@@ -1,7 +1,7 @@
 var board;
 
 function preload() {
-  font = loadFont("/index_files/Stellar.otf");
+  font = loadFont("/files/Stellar.otf");
 }
 
 function setup() {
@@ -70,4 +70,16 @@ function draw() {
   if (detectWin()) {
     winScreen();
   }
+}
+
+function range(len) {
+  return Array.apply(null, Array(len)).map(function (_, i) {return i;});
+}
+
+function randint(a,b) {
+  return int(random(a,b+1));
+}
+
+function choice(l) {
+  return l[randint(0,l.length-1)];
 }

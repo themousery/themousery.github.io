@@ -8,7 +8,7 @@ function preload() { //I am so ashamed of this
   loadImage("images/sad.png"),loadImage("images/smiley.png"),loadImage("images/star.png"),
   loadImage("images/tool.png"),loadImage("images/usa.png"),loadImage("images/x.png"),
   loadImage("images/flag.png")] // why is this a thing
-  font = loadFont("/index_files/Stellar.otf");
+  font = loadFont("/files/Stellar.otf");
 }
 
 function setup() {
