@@ -63,7 +63,9 @@ h1{
 hr{
   height:3px;
   background:#757161;
-  border: 0
+  border:0;
+  display:block;
+  clear:both;
 }
 
 p{
@@ -168,3 +170,5 @@ h2{
   margin-top:2px;
   color:#deeed6
 }
+
+.looper * {width:40%;height:auto;text-align:center;margin: 0 auto;}

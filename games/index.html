@@ -5,6 +5,23 @@
   <title>Mousery Games | Games</title>
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="/files/style.css">
+  <script src="/libraries/jquery.js"></script>
+  <script src="/files/games.json"></script>
+  <script>
+  window.onload = function(){
+    $.getJSON("/files/games.json", function(data) {
+      $.each(data.data, function (i, item) {
+        a = $('<div class=gamecontainer/>')
+        b = $("<a style=text-decoration:none/>").attr("href", item.id)
+        $("<img class='thumb'/>").attr("src", "thumbnails/"+item.id+".png").appendTo(b)
+        $("<div class='name'/>").append(item.name).appendTo(b)
+        $("<div class='desc'/>").append(item.desc).appendTo(b)
+        b.appendTo(a)
+        a.appendTo("#games")
+      });
+    });
+  }
+  </script>
 </head>
 <body>
   <ul>
@@ -15,41 +32,12 @@
   <div class="container">
     <h1>Games</h1>
     <hr>
-    <div class="gamecontainer">
-      <a style="text-decoration:none" href="slidingpuzzle">
-        <img class="thumb" src="thumbnails/slidingpuzzle.png">
-        <div class="name">Sliding Puzzle</div>
-        <div class="desc">move the tiles to the correct order</div>
-      </a>
+    <div id="games"></div>
+    <hr>
+    <div class="left">by themousery</div>
+    <div class="right">
+      <a class="foot" href="https://twitter.com/MouseryGames" target="_blank">Twitter</a> |
+      <a class="foot" href="mailto:mouserygames@gmail.com">Email</a>
     </div>
-    <div class="gamecontainer">
-      <a style="text-decoration:none" href="livingart">
-        <img class="thumb" src="thumbnails/livingart.png">
-        <div class="name">Living Art</div>
-        <div class="desc">draw, and watch your creation come to life</div>
-      </a>
-    </div>
-    <div class="gamecontainer">
-      <a style="text-decoration:none" href="matching">
-        <img class="thumb" src="thumbnails/matching.png">
-        <div class="name">Matching Game</div>
-        <div class="desc">match the tiles together</div>
-      </a>
-    </div>
-    <div class="gamecontainer">
-      <a style="text-decoration:none" href="life">
-        <img class="thumb" src="thumbnails/life.png">
-        <div class="name">Conway's Game of Life</div>
-        <div class="desc">a simple representation of life</div>
-      </a>
-    </div>
-    <footer class="footer">
-      <hr>
-      <div class="left">by themousery</div>
-      <div class="right">
-        <a class="foot" href="https://twitter.com/MouseryGames" target="_blank">Twitter</a> |
-        <a class="foot" href="mailto:mouserygames@gmail.com">Email</a>
-      </div>
-    </footer>
   </div>
 </body>

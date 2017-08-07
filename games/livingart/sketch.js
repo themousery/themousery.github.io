@@ -15,6 +15,7 @@ function setup() {
   sel.option('up');
   sel.option('down');
   sel.option('follower');
+  sel.option('(nothing)');
   sel.position(width-90, 5);
   textFont(font);
   textSize(25);
@@ -22,7 +23,7 @@ function setup() {
 
 function showPause() {
   noStroke();
-  if (mouseX < 75 && mouseY < 75) {
+  if (mouseX < 85 && mouseY < 75) {
     fill(0,0,255);
   }
   else {
@@ -37,7 +38,7 @@ function showPause() {
 }
 
 function showClear() {
-  if (mouseX > 75 && mouseX < 175 && mouseY < 75) {
+  if (mouseX > 85 && mouseX < 175 && mouseY < 75) {
     fill(0,0,255);
   }
   else {
@@ -49,6 +50,8 @@ function showClear() {
 function draw() {
   // background(0)
   // image(off,0,0)
+  fill(0)
+  rect(0,0,175,75)
   for (i = 0; i < fireflies.length; i++) {
     if (!pause) {
       fireflies[i].update();
@@ -69,10 +72,10 @@ function diff(v1, v2) {
 }
 
 function mousePressed() {
-  if (mouseX < 75 && mouseY < 75) {
+  if (mouseX < 85 && mouseY < 75) {
     pause = !pause;
   }
-  else if (mouseX > 75 && mouseX < 175 && mouseY < 75) {
+  else if (mouseX > 85 && mouseX < 175 && mouseY < 75) {
     if (confirm("Are you sure you want to clear the screen?")) {
       off.background(0);
     }
@@ -87,7 +90,7 @@ function keyPressed() {
 }
 
 function mouseDragged() {
-  if (!(mouseX>width-90 && mouseY<20) && !(mouseX < 175 && mouseY < 75)) {
+  if (!(mouseX>width-90 && mouseY<20) && !(mouseX < 175 && mouseY < 75) && sel.value() != "(nothing)") {
     fireflies.push(new Firefly(mouseX, mouseY, sel.value()));
   }
   return false
