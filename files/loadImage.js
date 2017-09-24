@@ -1,5 +1,5 @@
 window.onload = function(){
-  $.getJSON("http://www.reddit.com/r/perfectloops/.json?jsonp=?", function(data) {
+  $.getJSON("https://www.reddit.com/r/perfectloops/.json?jsonp=?", function(data) {
     console.log(data.data.children)
     going = true;
     while (going){
