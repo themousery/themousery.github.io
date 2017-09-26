@@ -1,7 +1,6 @@
 function Point(){
-  this.x=remaining.splice(random(remaining),1)*60;
+  this.x = remaining.splice(floor(random(remaining.length)),1)*60;
   this.y=60;
-  this.destination = 120;
 
   this.update = function(i){
     for (j=0;j<balls.length;j++){
@@ -17,7 +16,8 @@ function Point(){
   }
 
   this.draw = function(i){
-    fill(255);
-    rect(this.x,this.y,60,60)
+    fill(0,0,255);
+    noStroke();
+    ellipse(this.x+30,this.y+30,30)
   }
 }

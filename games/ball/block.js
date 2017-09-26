@@ -1,5 +1,5 @@
 function Block(){
-  this.x = remaining.splice(random(remaining),1)*60
+  this.x = remaining.splice(floor(random(remaining.length)),1)*60;
   this.y = 60;
   this.destination = 120
   this.score = round;
@@ -29,17 +29,15 @@ function Block(){
 
     if (movingBlocks){
       this.y+=2;
-      if (this.y == this.destination && i == blocks.length-1){
-        movingBlocks = false;
-        this.destination = this.y + 60
-        round++
-        nextRound()
-        moving = false
-        onGround = false
-      }
+      // if (this.y == this.destination && i == 0){
+      //   movingBlocks = false;
+      //   this.destination = this.y + 60
+      //   round++
+      //   nextRound()
+      //   moving = false
+      //   onGround = false
+      // }
     }
-    if (this.score<=0){
-      blocks.splice(i,1)
-    }
+
   }
 }

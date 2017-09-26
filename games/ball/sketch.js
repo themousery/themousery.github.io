@@ -19,6 +19,7 @@ function setup(){
   cur = 0
   gameOver=false
   newBalls=0;
+  blockDone = 0;
 
 }
 
@@ -37,7 +38,6 @@ function draw(){
   else{
     cur++;
     if (Object.keys(ballsout).length==0){
-      console.log("doot")
       movingBlocks = true
       cur=0;
       onGround=false;
@@ -48,17 +48,42 @@ function draw(){
       newBalls=0;
     }
   }
-  for (i=0;i<blocks.length;i++){
+  for (i=points.length-1;i>=0;i--){
+    points[i].draw()
+    points[i].update(i)
+  }
+  for (i=blocks.length-1;i>=0;i--){
     blocks[i].draw();
     blocks[i].update(i);
+    if (blocks[i].score<=0){
+      blocks.splice(i,1)
+    }
+    if (blocks[i] != undefined && blocks[i].y==blocks[i].destination && movingBlocks){
+      blockDone++;
+      if (blockDone==blocks.length){
+        for (j=blocks.length-1;j>=0;j--){
+          blocks[j].destination+=60
+        }
+        movingBlocks=false
+        moving = false
+        round++
+        nextRound()
+        onGround = false
+        blockDone=false
+      }
+    }
+  }
+  if (blocks.length==0){
+    movingBlocks=false
+    moving = false
+    round++
+    nextRound()
+    onGround = false
+    blockDone=false
   }
   for (i=0;i<balls.length;i++){
     balls[i].draw()
     balls[i].update(i)
-  }
-  for (i=0;i<points.length;i++){
-    points[i].draw()
-    points[i].update(i)
   }
   if (gameOver){
     background(22,22,29);
@@ -69,7 +94,7 @@ function draw(){
 }
 
 function mouseReleased(){
-  if (!moving){
+  if (!movingBlocks){
     moving = true
     ballsout={}
     for (i=0;i<balls.length;i++){
