@@ -29,4 +29,12 @@
       <a class="foot" href="mailto:mouserygames@gmail.com">Email</a>
     </div>
   </div>
+  <script>
+    gif = document.getElementById("gif");
+    if (gif.scrollWidth>window.innerWidth*0.74){
+      newWidth = window.innerWidth*0.74
+      gif.style.width = newWidth.toString();
+      gif.style.height = "auto"
+    }
+  </script>
 </body>
