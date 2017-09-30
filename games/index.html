@@ -15,7 +15,7 @@
         b = $("<a style=text-decoration:none/>").attr("href", item.id)
         $("<img class='thumb'/>").attr("src", "thumbnails/"+item.id+".png").appendTo(b)
         $("<div class='name'/>").append(item.name).appendTo(b)
-        $("<div class='desc'/>").append(item.desc).appendTo(b)
+        // $("<div class='desc'/>").append(item.desc).appendTo(b)
         b.appendTo(a)
         a.appendTo("#games")
       });
