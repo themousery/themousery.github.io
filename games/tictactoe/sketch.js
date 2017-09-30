@@ -1,7 +1,7 @@
 var cnv;
 
 function preload() {
-  font = loadFont("/index_files/Stellar.otf");
+  font = loadFont("/files/Stellar.otf");
 }
 
 function setup() {
@@ -114,3 +114,14 @@ function draw() {
     text('click anywhere to restart',287,500);
   }
 }
+
+
+function randint(a,b) {
+  return int(random(a,b+1));
+}
+
+function choice(l) {
+  return l[randint(0,l.length-1)];
+}
+
+collidePointRect=function(pointX,pointY,x,y,xW,yW){return(pointX>=x&&pointX<=x+xW&&pointY>=y&&pointY<=y+yW)}
