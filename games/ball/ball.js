@@ -1,5 +1,5 @@
 function Ball(){
-  this.r = 10
+  this.r = 9
   this.pos = createVector(width/2,height-this.r-1)
   if (balls.length>0){
     this.pos.x = balls[0].pos.x
@@ -39,15 +39,19 @@ function Ball(){
         if (collideRectCircle(block.x, block.y, 60, 60, this.pos.x, this.pos.y, this.r*2)){
           if (this.pos.x <= block.x){
             this.vel.x = -abs(this.vel.x)
+            this.pos.x = block.x-this.r
           }
           if (this.pos.x >= block.x+60){
             this.vel.x = abs(this.vel.x)
+            this.pos.x = block.x+60+this.r
           }
           if (this.pos.y <= block.y){
             this.vel.y = -abs(this.vel.y)
+            this.pos.y = block.y-this.r
           }
           if (this.pos.y>= block.y+60){
             this.vel.y = abs(this.vel.y)
+            this.pos.y = block.y+60+this.r
           }
           block.score--;
         }
