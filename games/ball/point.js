@@ -5,7 +5,7 @@ function Point(){
   this.update = function(i){
     for (j=0;j<balls.length;j++){
       ball=balls[j]
-      if(dist(ball.pos.x,ball.pos.y,this.x,this.y) <= (30)+(ball.r)){
+      if(collideRectRect(this.x+15,this.y+15,30,30,ball.pos.x-ball.r,ball.pos.y-ball.r,ball.r*2,ball.r*2)){
         newBalls++
         points.splice(i,1);
       }
