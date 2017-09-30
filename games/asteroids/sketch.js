@@ -16,7 +16,7 @@ function setup(){
   cnv.parent('cnv')
   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     style = "color:blue;text-align:center;padding-top:25%;font-size:35"
-    document.html.style="background-color:lightblue"
+    document.body.style="background-color:lightblue"
     b = document.getElementById('cnv')
     b.innerHTML="<h1 style='"+style+"'>Sorry, this game is for desktop only</h1>"
     noLoop()
