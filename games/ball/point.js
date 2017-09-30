@@ -16,7 +16,7 @@ function Point(){
   }
 
   this.draw = function(i){
-    fill(0,0,255);
+    fill(204,204,255);
     noStroke();
     ellipse(this.x+30,this.y+30,30)
   }
