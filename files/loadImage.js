@@ -3,8 +3,10 @@ window.onload = function(){
     going = true;
     while (going){
       randompost = data.data.children[Math.floor(Math.random()*data.data.children.length)];
+      console.log(randompost)
+      mouseover = '"' + randompost.data.title + '", posted to '+ randompost.data.subreddit_name_prefixed +' by /u/'+randompost.data.author
       if (randompost.data.domain == "i.redd.it"){
-        $("<img id='gif'/>").attr("src",randompost.data.url).appendTo("#loop")
+        $("<img id='gif'/>").attr("src",randompost.data.url).attr("title", mouseover).appendTo("#loop")
         going = false
       }
       if (randompost.data.domain == "i.imgur.com"){
@@ -14,8 +16,7 @@ window.onload = function(){
         if (randompost.data.url.endsWith(".gifv")){
           url = randompost.data.url.slice(0,-5) + ".mp4"
         }
-
-        $("<video autoplay=\"autoplay\" loop/ id=\"gif\">").appendTo("#loop")
+        $("<video autoplay=\"autoplay\" loop/ id=\"gif\">").attr("title", mouseover).appendTo("#loop")
         $("<source/>").attr("src",url).appendTo("#gif")
         going = false
       }

@@ -11,7 +11,7 @@
   window.onload = function(){
     $.getJSON("/files/games.json", function(data) {
       $.each(data.data, function (i, item) {
-        a = $('<div class=gamecontainer/>')
+        a = $('<div class=gamecontainer/>').attr("title", item.desc)
         b = $("<a style=text-decoration:none/>").attr("href", item.id)
         $("<img class='thumb'/>").attr("src", "thumbnails/"+item.id+".png").appendTo(b)
         $("<div class='name'/>").append(item.name).appendTo(b)
