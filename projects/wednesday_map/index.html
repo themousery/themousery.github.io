@@ -12,7 +12,7 @@
 </head>
 <body>
   <img src="frog.jpg" id="frog"></img>
-  <img src="almostWednesday.jpg" id="tadpole" hidden="true"></img>
+  <img src="tadpole.jpg" id="tadpole" hidden="true"></img>
   <div id="world-map" style="width:100%; height:100%;position:absolute;top:0px"></div>
   <script>
     function calcTime(offset) {
@@ -37,14 +37,15 @@
         zoomButtons:false,
         zoomMax:1
       });
+      window.onresize()
+      window.set
+
+    });
+    window.onresize = function(){
       time = []
       for (i=-10;i<12;i++){
         time.push(calcTime(i))
       }
-      window.onresize()
-
-    });
-    window.onresize = function(){
       wednesdays = []
       for (i=0;i<time.length;i++){
         if (time[i]==3){
@@ -65,11 +66,13 @@
       }
       if (wednesdays[0] == 0 && wednesdays.length != 0){
         tadpole.hidden = false
+        frog.hidden = false
         tadpole.style.left = wednesdays[wednesdays.length-1].toString()+"px"
         tadpole.style.width = (window.innerWidth-wednesdays[wednesdays.length-1]-5).toString()+"px"
       }
-      else{
+      else if (wednesdays[0]!=0 && wednesdays.length != 0){
         tadpole.hidden = false
+        frog.hidden = false
         tadpole.style.left = "0px"
         tadpole.style.width = (Math.min(...wednesdays)).toString()+"px"
       }
