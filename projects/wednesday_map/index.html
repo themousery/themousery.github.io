@@ -36,7 +36,7 @@
         container: $("#world-map")
       });
       time = []
-      for (i=-10;i<12;i+=2){
+      for (i=-10;i<12;i++){
         time.push(calcTime(i))
       }
       window.onresize()
@@ -48,20 +48,31 @@
         if (time[i]==3){
           wednesdays.push(i*window.innerWidth/time.length)
         }
-        if (time[i]!=3){
-          // wednesdays.push(time[i]*window.innerWidth/time.length)
-        }
       }
       frog.style.left = Math.min(...wednesdays).toString()+"px"
-      frog.style.width = (Math.max(...wednesdays)-Math.min(...wednesdays)).toString()+"px"
-      // frog.style.height = "99%"
-      if (wednesdays == []){
-        frog.hidden = true
+      width = (Math.max(...wednesdays)-Math.min(...wednesdays))
+      if (time[time.length-1] == 3){
+        width = (window.innerWidth-Math.min(...wednesdays)-5)
       }
-      else if (wednesdays[0] == 0){
+      frog.style.width = width.toString()+"px"
+      if (wednesdays.length == 0){
+        frog.hidden = true
+        tadpole.hidden = false
+        tadpole.style.left = "0px"
+        tadpole.style.width = "99%"
+      }
+      if (wednesdays[0] == 0 && wednesdays.length != 0){
         tadpole.hidden = false
         tadpole.style.left = wednesdays[wednesdays.length-1].toString()+"px"
         tadpole.style.width = (window.innerWidth-wednesdays[wednesdays.length-1]-5).toString()+"px"
+      }
+      else{
+        tadpole.hidden = false
+        tadpole.style.left = "0px"
+        tadpole.style.width = (Math.min(...wednesdays)).toString()+"px"
+      }
+      if (wednesdays.length == time.length){
+        tadpole.hidden = true
       }
     }
   </script>
