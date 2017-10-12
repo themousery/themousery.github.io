@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>me⏰irl</title>
+  <link rel="stylesheet" href="jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+  <script src="/libraries/jquery.js"></script>
+  <script src="jquery-jvectormap-2.0.3.min.js"></script>
+  <script src="jquery-jvectormap-world-mill.js"></script>
+  <style>body,html{width:100%;height:100%;margin:0;padding:0}</style>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <img src="frog.jpg" id="frog"></img>
+  <img src="almostWednesday.jpg" id="tadpole" hidden="true"></img>
+  <div id="world-map" style="width:100%; height:100%;position:absolute;top:0px"></div>
+  <script>
+    function calcTime(offset) {
+        var d = new Date();
+
+        var utc = new Date(d.getTime() + (d.getTimezoneOffset() * 60000));
+
+        var adjust = new Date(utc.getTime() + (offset * 3600000));
+        return (adjust.getDay(offset));
+    }
+    var map;
+    $(function(){
+      map = new jvm.Map({
+        map: 'world_mill',
+        regionStyle:{
+          initial:{
+            fill:'black'
+          }
+        },
+        backgroundColor: 'rgba(255,255,255,0)',
+        container: $("#world-map")
+      });
+      time = []
+      for (i=-10;i<12;i+=2){
+        time.push(calcTime(i))
+      }
+      window.onresize()
+
+    });
+    window.onresize = function(){
+      wednesdays = []
+      for (i=0;i<time.length;i++){
+        if (time[i]==3){
+          wednesdays.push(i*window.innerWidth/time.length)
+        }
+        if (time[i]!=3){
+          // wednesdays.push(time[i]*window.innerWidth/time.length)
+        }
+      }
+      frog.style.left = Math.min(...wednesdays).toString()+"px"
+      frog.style.width = (Math.max(...wednesdays)-Math.min(...wednesdays)).toString()+"px"
+      // frog.style.height = "99%"
+      if (wednesdays == []){
+        frog.hidden = true
+      }
+      else if (wednesdays[0] == 0){
+        tadpole.hidden = false
+        tadpole.style.left = wednesdays[wednesdays.length-1].toString()+"px"
+        tadpole.style.width = (window.innerWidth-wednesdays[wednesdays.length-1]-5).toString()+"px"
+      }
+    }
+  </script>
+</body>
+</html>
