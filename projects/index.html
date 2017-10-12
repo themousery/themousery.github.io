@@ -9,15 +9,15 @@
   <script src="/files/games.json"></script>
   <script>
   window.onload = function(){
-    $.getJSON("/files/games.json", function(data) {
+    $.getJSON("/files/projects.json", function(data) {
       $.each(data.data, function (i, item) {
         a = $('<div class=gamecontainer/>').attr("title", item.desc)
         b = $("<a style=text-decoration:none/>").attr("href", item.id)
-        $("<img class='thumb'/>").attr("src", "thumbnails/"+item.id+".png").appendTo(b)
+        $("<img class='thumb'/>").attr("src", ".thumbnails/"+item.id+".png").appendTo(b)
         $("<div class='name'/>").append(item.name).appendTo(b)
         // $("<div class='desc'/>").append(item.desc).appendTo(b)
         b.appendTo(a)
-        a.appendTo("#games")
+        a.appendTo("#projects")
       });
     });
   }
@@ -26,14 +26,14 @@
 <body>
   <ul>
     <li><a class='none'href="/">Home</a></li>
-    <li class="active"><a class="active" href="/games">Games</a></li>
-    <li><a class="none" href="/projects">Projects</a></li>
+    <li><a class="none" href="/games">Games</li>
+    <li class="active"><a class="active" href="/projects">Projects</a></li>
     <li><a class="none" href="/contact">Contact</a></li>
   </ul>
   <div class="container">
-    <h1>Games</h1>
+    <h1>Projects</h1>
     <hr>
-    <div id="games"></div>
+    <div id="projects"></div>
     <hr>
     <div class="left">by themousery</div>
     <div class="right">
