@@ -20,6 +20,9 @@ function setup(){
 }
 
 function draw(){
+  if (blocks[currentBlock].falling){
+    gameover = true
+  }
   translate(0, cam)
   background(22,22,29);
   blocks[currentBlock].update()
@@ -40,13 +43,13 @@ function draw(){
     textAlign(CENTER, CENTER)
 
     textSize(100)
-    text("Game Over", width/2, height+100)
+    text("Game Over", width/2, height+120)
 
     textSize(50)
-    text("Final Score: "+score, width/2, height+300)
+    text("Final Score: "+score, width/2, height+320)
 
     textSize(30)
-    text("click to restart", width/2, height+500)
+    text("click to restart", width/2, height+520)
   }
   stroke(252,251,227)
   strokeWeight(3)
@@ -60,4 +63,8 @@ function mousePressed(){
   else{
     blocks[currentBlock].doCutoff()
   }
+}
+
+function touchDragged(e){
+  e.preventDefault()
 }
