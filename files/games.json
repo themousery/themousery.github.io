@@ -52,6 +52,11 @@
       "id":"asteroids",
       "name":"Asteroid Belt",
       "desc":"shoot asteroids"
+    },
+    {
+      "id":"tower",
+      "name":"Tower",
+      "desc":"try to build a tower"
     }
   ]
 }
