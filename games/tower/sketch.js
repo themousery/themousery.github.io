@@ -5,24 +5,26 @@ function preload(){
   font = loadFont("/files/Connection.otf");
 }
 
-function setup(){
+function setupBlocks(){
   startHue = floor(random(0,360))
-  cnv = createCanvas(700,600)
   blocks = []
   currentBlock = 1
   blocks.push(new Block(startHue, height-50, blockWidth, (width-blockWidth)/2))
   blocks.push(new Block(startHue+10, height-100))
+  score = 0
+}
+
+function setup(){
+  cnv = createCanvas(700,600)
   gameover = false
   cam = 0
-  score = 0
+  zoomingUp = false
   colorMode(HSB)
   textFont(font)
+  setupBlocks()
 }
 
 function draw(){
-  if (blocks[currentBlock].falling){
-    gameover = true
-  }
   translate(0, cam)
   background(22,22,29);
   blocks[currentBlock].update()
@@ -30,6 +32,14 @@ function draw(){
     blocks[i].draw(i)
   }
   if (!gameover){
+    if (zoomingUp){
+      if (cam<=0){
+        cam+=50
+      }
+      else{
+        zoomingUp=false
+      }
+    }
     textSize(50)
     textAlign(LEFT, TOP)
     fill(blocks[currentBlock].hue%360, 75, 85)
@@ -58,7 +68,8 @@ function draw(){
 
 function mousePressed(){
   if (gameover){
-    setup()
+    setupBlocks()
+    zoomingUp=true
   }
   else{
     blocks[currentBlock].doCutoff()
