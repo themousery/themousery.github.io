@@ -70,6 +70,7 @@ function mousePressed(){
   if (gameover){
     setupBlocks()
     zoomingUp=true
+    cam=0
   }
   else{
     blocks[currentBlock].doCutoff()
