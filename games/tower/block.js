@@ -34,7 +34,7 @@ function Block(colorHue, y, w=blockWidth, x=0, faller=false){
   }
   this.doCutoff = function(){
     blockDown = blocks[currentBlock-1]
-    if (this.x+this.w < blockDown.x || this.x > blockDown.x+blockDown.w){
+    if (this.x+this.w <= blockDown.x || this.x >= blockDown.x+blockDown.w){
       this.faller = true
       gameover = true
     }
