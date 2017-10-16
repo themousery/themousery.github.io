@@ -65,6 +65,5 @@ function mousePressed(){
   }
 }
 
-function touchMoved(e){
-  e.preventDefault()
-}
+function touchStarted(e){e.preventDefault()}
+function touchMoved(e){e.preventDefault()}
