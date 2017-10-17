@@ -39,6 +39,10 @@ function draw(){
       else{
         zoomingUp=false
       }
+      if (cam>-50){
+        cam = 0
+        zoomingUp=false
+      }
     }
     textSize(50)
     textAlign(LEFT, TOP)
@@ -70,7 +74,7 @@ function mousePressed(){
   if (gameover){
     setupBlocks()
     zoomingUp=true
-    cam=0
+    gameover = false
   }
   else{
     blocks[currentBlock].doCutoff()
