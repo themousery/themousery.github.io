@@ -77,9 +77,10 @@ function mousePressed() {
   }
   else if (mouseX > 85 && mouseX < 175 && mouseY < 75) {
     if (confirm("Are you sure you want to clear the screen?")) {
-      off.background(0);
+      background(0);
+      fireflies = [];
     }
-    fireflies = [];
+
   }
 }
 
