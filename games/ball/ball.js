@@ -9,7 +9,7 @@ function Ball(){
   this.update = function(i){
     if (moving && cur>=i*5){
       this.pos.add(this.vel)
-kachow
+
       if (this.pos.x >= width-this.r){
         this.pos.x = width-this.r
         this.vel.x = -abs(this.vel.x)
