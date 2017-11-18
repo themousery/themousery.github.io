@@ -57,11 +57,6 @@
       "id":"tower",
       "name":"Tower",
       "desc":"try to build a tower"
-    },
-    {
-      "id":"breakout",
-      "name":"Breakout",
-      "desc":"a clone of Atari Breakout"
     }
   ]
 }
