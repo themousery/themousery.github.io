@@ -134,3 +134,11 @@ collideRectRect = function (x, y, w, h, x2, y2, w2, h2) {
 function touchMoved(e){
   e.preventDefault()
 }
+
+function keyPressed(){
+  if (keyCode==81){
+    for(i=0;i<10;i++){
+      balls.push(new Ball())
+    }
+  }
+}
