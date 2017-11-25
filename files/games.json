@@ -47,12 +47,6 @@
       "name":"Ball Game",
       "desc":"shoot balls at boxes"
     },
-
-    {
-      "id":"asteroids",
-      "name":"Asteroid Belt",
-      "desc":"shoot asteroids"
-    },
     {
       "id":"tower",
       "name":"Tower",
