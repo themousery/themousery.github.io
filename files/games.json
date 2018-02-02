@@ -1,6 +1,21 @@
 {
   "data":[
     {
+      "id":"etiam",
+      "name":"Etiam",
+      "desc":"Aliens have invaded your planet, but you managed to flee in a spaceship. Can you fight through them and escape?"
+    },
+    {
+      "id":"ball",
+      "name":"Ball Game",
+      "desc":"shoot balls at boxes"
+    },
+    {
+      "id":"tower",
+      "name":"Tower",
+      "desc":"try to build a tower"
+    },
+    {
       "id":"slidingpuzzle",
       "name":"Sliding Puzzle",
       "desc":"move the tiles to the correct order"
@@ -17,13 +32,6 @@
       "name":"Matching Game",
       "desc":"match the tiles together"
     },
-
-    {
-      "id":"life",
-      "name":"Conway's Game of Life",
-      "desc":"a simple representation of life"
-    },
-
     {
       "id":"pong",
       "name":"Pong",
@@ -41,16 +49,10 @@
       "name":"Tic Tac Toe",
       "desc":"classic game of tic tac toe"
     },
-
     {
-      "id":"ball",
-      "name":"Ball Game",
-      "desc":"shoot balls at boxes"
-    },
-    {
-      "id":"tower",
-      "name":"Tower",
-      "desc":"try to build a tower"
+      "id":"life",
+      "name":"Conway's Game of Life",
+      "desc":"a simple representation of life"
     }
   ]
 }
