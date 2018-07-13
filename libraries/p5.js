@@ -46,3 +46,25 @@ collideRectRect = function (x, y, w, h, x2, y2, w2, h2) {
   }
   return false;
 };
+
+collidePointRect = function (pointX, pointY, x, y, xW, yW) {
+//2d
+if (pointX >= x &&         // right of the left edge AND
+    pointX <= x + xW &&    // left of the right edge AND
+    pointY >= y &&         // below the top AND
+    pointY <= y + yW) {    // above the bottom
+        return true;
+}
+return false;
+};
+
+new2dArray = function(w, h){
+  l = []
+  for (x=0;x<w;x++){
+    l.push([])
+    for (y=0;y<h;y++){
+      l[x].push(-1)
+    }
+  }
+  return l
+}
