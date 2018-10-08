@@ -1,0 +1,55 @@
+{
+  "data":[
+    {
+      "id":"ball",
+      "name":"Ball Game",
+      "desc":"shoot balls at boxes"
+    },
+    {
+      "id":"tower",
+      "name":"Tower",
+      "desc":"try to build a tower"
+    },
+    {
+      "id":"slidingpuzzle",
+      "name":"Sliding Puzzle",
+      "desc":"move the tiles to the correct order"
+    },
+    {
+      "id":"livingart",
+      "name":"Living Art",
+      "desc":"draw, and watch your creation come to life"
+    },
+    {
+      "id":"pong",
+      "name":"Pong",
+      "desc":"classic game of pong"
+    },
+
+    {
+      "id":"floodfill",
+      "name":"Floodfill",
+      "desc":"fill in the whole board"
+    },
+    {
+      "id":"boxes",
+      "name":"Dots & Boxes",
+      "desc":"the classic game of dots and boxes"
+    },
+    {
+      "id":"tictactoe",
+      "name":"Tic Tac Toe",
+      "desc":"classic game of tic tac toe"
+    },
+    {
+      "id":"life",
+      "name":"Game of Life",
+      "desc":"a simple representation of life"
+    },
+    {
+      "id":"matching",
+      "name":"Matching Game",
+      "desc":"match the tiles together"
+    }
+  ]
+}
