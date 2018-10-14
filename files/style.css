@@ -1,6 +1,6 @@
 @font-face{
   font-family:pixel;
-  src:url("/pixel.ttf") format("truetype");
+  src:url("/files/pixel.ttf") format("truetype");
 }
 
 body{
@@ -53,4 +53,10 @@ img{
   color:#8b7765;
   font-family:pixel;
   font-size:25px;
+}
+
+.links{
+  text-align:center;
+  display:inline-block;
+  font-size:125%;
 }
