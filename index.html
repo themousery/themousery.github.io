@@ -10,26 +10,23 @@
   <meta name="author" content="themousery">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/files/style.css">
+  <!-- <link rel="stylesheet" href="/files/stackicons-social.css"> -->
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-  // for each item in our array
-  $.getJSON("/games.json", function(data) {
-    $.each(data.data, function (i, item) {
-      var a = $('<div class=game/>').attr("title", item.desc) // container
-      var link = $("<a style=text-decoration:none/>").attr("href", "/games/"+item.id).appendTo(a) // link
-      $("<img class='thumb'/>").attr("src", "thumbs/"+item.id+".png").appendTo(link) // thumbnail
-      $("<div class='name'/>").append(item.name).appendTo(link) // name of game
-      link.appendTo(a) // put the link in the container
-      a.appendTo("#games") // put the container in the document
-    });
-  });
-  </script>
+  <script src="/files/loadGames.js"></script>
 </head>
 
 <body>
-  <img src="/banner.png">
+  <img src="/files/banner.png">
+  <!-- <nav class="nav-list links st-icon-only st-multi-color">
+    <ul>
+      <li><a class="st-icon-twitter" href="https://twitter.com/themousery"></a></li>
+      <li><a class="st-icon-reddit" href="https://reddit.com/u/themousery"></a></li>
+      <li><a class="st-icon-github" href="https://github.com/themousery"></a></li>
+      <li><a class="st-icon-email" href="mailto:info@themousery.com"></a></li>
+    </ul>
+  </nav> -->
   <hr>
   <div class="container" id="games">
   </div>
