@@ -1,0 +1,11 @@
+body{
+  background:#ffdab9;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0;
+}
+canvas.p5Canvas{
+  width:auto;
+  height:100%;
+}
