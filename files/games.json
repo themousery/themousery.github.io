@@ -6,14 +6,19 @@
       "desc":"shoot balls at boxes"
     },
     {
-      "id":"tower",
-      "name":"Tower",
-      "desc":"try to build a tower"
-    },
-    {
       "id":"slidingpuzzle",
       "name":"Sliding Puzzle",
       "desc":"move the tiles to the correct order"
+    },
+    {
+      "id":"tictactoe",
+      "name":"Tic Tac Toe",
+      "desc":"classic game of tic tac toe"
+    },
+    {
+      "id":"tower",
+      "name":"Tower",
+      "desc":"try to build a tower"
     },
     {
       "id":"livingart",
@@ -35,11 +40,6 @@
       "id":"boxes",
       "name":"Dots & Boxes",
       "desc":"the classic game of dots and boxes"
-    },
-    {
-      "id":"tictactoe",
-      "name":"Tic Tac Toe",
-      "desc":"classic game of tic tac toe"
     },
     {
       "id":"life",
