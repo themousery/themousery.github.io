@@ -5,7 +5,7 @@ function setup(){
   sized = 0
   leafImg = loadImage("/files/leaf.png")
   leaves = []
-  colors = [[233,134,4],[223,57,8],[201,30,10]]
+  colors = [[236,117,5],[244,43,3],[231,14,2],[232,144,5],[216,74,5]]
   t = 0
 }
 
