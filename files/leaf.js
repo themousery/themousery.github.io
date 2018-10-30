@@ -1,4 +1,5 @@
 function setup(){
+  frameRate(30)
   canvas = createCanvas(document.body.scrollWidth, document.body.scrollHeight)
   canvas.position(0,0)
   canvas.style('pointer-events', 'none')
