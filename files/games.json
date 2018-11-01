@@ -1,6 +1,11 @@
 {
   "data":[
     {
+      "id":"fourinarow",
+      "name":"Four in a Row",
+      "desc":"the classic game of Four in a Row"
+    },
+    {
       "id":"ball",
       "name":"Ball Game",
       "desc":"shoot balls at boxes"
@@ -29,12 +34,6 @@
       "id":"pong",
       "name":"Pong",
       "desc":"classic game of pong"
-    },
-
-    {
-      "id":"floodfill",
-      "name":"Floodfill",
-      "desc":"fill in the whole board"
     },
     {
       "id":"boxes",
