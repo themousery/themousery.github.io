@@ -3,18 +3,22 @@
   src:url("/files/pixel.ttf") format("truetype");
 }
 
+:root{
+  --text-color:#130E0D
+}
+
 body{
   background:#725e54;
 }
 
 h1{
-  color:#130E0D;
+  color:var(--text-color);
   text-align:center;
   font-family:pixel;
 }
 
 hr{
-  border-color:#130E0D;
+  border-color:var(--text-color);
   width:90%;
   margin-bottom:50px;
 }
@@ -24,6 +28,18 @@ img{
   margin-left: auto;
   margin-right: auto;
   max-width:100%;
+}
+
+a{
+  color:inherit;
+}
+
+.links{
+  text-align:center;
+  color:var(--text-color);
+  font-family:pixel;
+  display:inline-block;
+  font-size:125%;
 }
 
 .container{
@@ -51,13 +67,9 @@ img{
 
 .name{
   text-align:center;
-  color:#130E0D;
+  color:var(--text-color);
   font-family:pixel;
   font-size:3vw;
-}
-
-.links{
-  text-align:center;
   display:inline-block;
-  font-size:125%;
+  width:90%;
 }
