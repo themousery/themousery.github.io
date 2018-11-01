@@ -39,6 +39,7 @@ img{
   border:0;
   display:inline-block;
   vertical-align:top;
+  justify-content:center;
 }
 
 .thumb {
@@ -52,7 +53,7 @@ img{
   text-align:center;
   color:#130E0D;
   font-family:pixel;
-  font-size:4vw;
+  font-size:3vw;
 }
 
 .links{
