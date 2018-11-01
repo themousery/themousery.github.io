@@ -30,12 +30,6 @@
       "name":"Pong",
       "desc":"classic game of pong"
     },
-
-    {
-      "id":"floodfill",
-      "name":"Floodfill",
-      "desc":"fill in the whole board"
-    },
     {
       "id":"boxes",
       "name":"Dots & Boxes",
