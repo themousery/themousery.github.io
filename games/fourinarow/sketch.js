@@ -77,7 +77,6 @@ function touchMoved(){
 }
 
 function touchStarted(){
-  print("touch!!")
   if (isMobile){
     let x = floor(mouseX/(width/7))*(width/7)/100
     if (selection == x && canPlace){
