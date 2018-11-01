@@ -4,17 +4,17 @@
 }
 
 body{
-  background:#A23B72;
+  background:#725e54;
 }
 
 h1{
-  color:#FF7C00;
+  color:#130E0D;
   text-align:center;
   font-family:pixel;
 }
 
 hr{
-  border-color:#FF7C00;
+  border-color:#130E0D;
   width:90%;
   margin-bottom:50px;
 }
@@ -50,7 +50,7 @@ img{
 
 .name{
   text-align:center;
-  color:#FF7C00;
+  color:#130E0D;
   font-family:pixel;
   font-size:25px;
 }
