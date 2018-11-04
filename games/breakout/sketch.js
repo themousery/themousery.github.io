@@ -2,7 +2,7 @@ var blockWidth
 var blockHeight
 
 function preload(){
-  font = loadFont("/files/Stellar.otf")
+  font = loadFont("/files/fonts/Stellar.otf")
 }
 
 function setup(){

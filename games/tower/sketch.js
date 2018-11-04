@@ -2,7 +2,7 @@ var blockWidth = 200
 var handicap = 7
 
 function preload(){
-  font = loadFont("/files/Connection.otf");
+  font = loadFont("/files/fonts/Connection.otf");
 }
 
 function setupBlocks(){

@@ -1,5 +1,5 @@
 function preload() {
-  font = loadFont("/files/Stellar.otf");
+  font = loadFont("/files/fonts/Stellar.otf");
   human = loadImage("img/human.png")
   robot = loadImage("img/robot.png")
 }

@@ -1,6 +1,6 @@
 @font-face{
   font-family:pixel;
-  src:url("/files/pixel.ttf") format("truetype");
+  src:url("/files/fonts/pixel.ttf") format("truetype");
 }
 
 :root{

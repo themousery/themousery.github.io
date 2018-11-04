@@ -1,6 +1,6 @@
 window.onload = function(){
   // for each item in our array
-  $.getJSON("/files/games.json", function(data) {
+  $.getJSON("/files/code/games.json", function(data) {
     $.each(data.data, function (i, item) {
       var a = $('<div class=game/>').attr("title", item.desc) // container
       var link = $("<a style=text-decoration:none/>").attr("href", "/games/"+item.id).appendTo(a) // link

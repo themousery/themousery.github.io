@@ -3,7 +3,7 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(420,600);
+  c = createCanvas(420,600);
   points=[];
   blocks = [];
   round = 1
@@ -20,11 +20,13 @@ function setup(){
   gameOver=false
   newBalls=0;
   blockDone = 0;
-
+  windowResized()
 }
 
 function draw(){
-  background(22,22,29);
+  // background(22,22,29);
+  fill(22,22,29)
+  rect(0,0,width,height)
   if (!moving){
     stroke(255)
     strokeWeight(2)
@@ -131,14 +133,22 @@ collideRectRect = function (x, y, w, h, x2, y2, w2, h2) {
   return false;
 };
 
-function touchMoved(e){
-  e.preventDefault()
-}
-
 function keyPressed(){
   if (keyCode==81){
     for(i=0;i<10;i++){
       balls.push(new Ball())
     }
+  }
+}
+
+function windowResized(){
+  let w = width/windowWidth
+  let h = height/windowHeight
+  if (w>h){
+    c.style('width', '90%')
+    c.style('height', 'auto')
+  }else{
+    c.style('height', '90%')
+    c.style('width', 'auto')
   }
 }
