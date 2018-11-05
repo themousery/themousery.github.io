@@ -5,7 +5,7 @@ function preload() {
 }
 
 function setup() {
-  cnv = createCanvas(601,601);
+  c = createCanvas(601,601);
   windowResized();
   resetBoard();
   textFont(font);
@@ -20,9 +20,15 @@ function setup() {
 }
 
 function windowResized() {
-  x = (windowWidth - width) / 2;
-  y = (windowHeight - height) / 2;
-  cnv.position(x, y);
+  let w = width/windowWidth
+  let h = height/windowHeight
+  if (w>h){
+    c.style('width', '90%')
+    c.style('height', 'auto')
+  }else{
+    c.style('height', '90%')
+    c.style('width', 'auto')
+  }
 }
 
 function mousePressed() {
@@ -62,7 +68,8 @@ function winScreen() {
 }
 
 function draw() {
-  background(240);
+  fill(240);
+  rect(-2,-2,width+4,height+4)
   drawBoard();
   fill(255, 255, 255, 70);
   noStroke();
