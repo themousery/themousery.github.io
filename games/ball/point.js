@@ -1,23 +1,30 @@
 function Point(){
-  this.x = remaining.splice(floor(random(remaining.length)),1)*60;
-  this.y=60;
-
-  this.update = function(i){
-    for (j=0;j<balls.length;j++){
-      ball=balls[j]
-      if(collideRectRect(this.x+15,this.y+15,30,30,ball.pos.x-ball.r,ball.pos.y-ball.r,ball.r*2,ball.r*2)){
-        newBalls++
-        points.splice(i,1);
-      }
-    }
-    if (movingBlocks){
-      this.y+=2;
-    }
+  this.x = available.splice(floor(random(available.length)),1)*60+30
+  this.y = 30
+  this.d = 30
+  
+  this.move = function(){
+    new TWEEN.Tween(this)
+        .to({y:this.y+60}, 500)
+        .start()
   }
-
+  this.move()
+  
   this.draw = function(i){
+    colorMode(RGB)
     fill(204,204,255);
     noStroke();
-    ellipse(this.x+30,this.y+30,30)
+    ellipse(this.x,this.y,this.d)
+    
+    for (ball of balls){
+      if (dist(this.x,this.y,ball.pos.x,ball.pos.y)<this.d+ball.d){
+        points.splice(i,1)
+        newBalls++
+      }
+    }
   }
+}
+
+function newPoint(){
+  points.push(new Point())
 }
