@@ -16,6 +16,7 @@ function setupBlocks(){
 
 function setup(){
   cnv = createCanvas(700,600)
+  windowResized()
   gameover = false
   cam = 0
   zoomingUp = false
@@ -26,7 +27,8 @@ function setup(){
 
 function draw(){
   translate(0, cam)
-  background(22,22,29);
+  fill(22,22,29);
+  rect(-2,-cam-2,width+4,height+4)
   blocks[currentBlock].update()
   for (i=blocks.length-1;i>=0;i--){
     blocks[i].draw(i)
@@ -81,4 +83,14 @@ function mousePressed(){
   }
 }
 
-function touchMoved(e){e.preventDefault()}
+function windowResized(){
+  let w = width/windowWidth
+  let h = height/windowHeight
+  if (w>h){
+    cnv.style('width', '90%')
+    cnv.style('height', 'auto')
+  }else{
+    cnv.style('height', '90%')
+    cnv.style('width', 'auto')
+  }
+}
