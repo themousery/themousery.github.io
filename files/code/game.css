@@ -4,6 +4,7 @@ body{
   justify-content:center;
   align-items:center;
   margin:0;
+  height:100%;
 }
 canvas.p5Canvas{
   width:auto;
