@@ -39,7 +39,7 @@ function draw(){
     TWEEN.update()
     if(!moving){drawLine()}else{counter+=0.2}
     updateBlocks()
-    for ([i,p] of points.entries()){p.draw(i)}
+    for (i=points.length-1;i>=0;i--){points[i].draw(i)}
     doneBalls=0
     for ([i,ball] of balls.entries()){ ball.update(i); ball.draw() }
     if (doneBalls==balls.length){newRound();moving=false}
