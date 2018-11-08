@@ -67,3 +67,7 @@ function windowResized(){
     cnv.style('width', 'auto')
   }
 }
+
+function touchMoved(e){
+  e.preventDefault()
+}
