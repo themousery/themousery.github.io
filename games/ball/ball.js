@@ -17,8 +17,8 @@ function Ball(x=width/2,y=height-9){
     // there is only one library i found which does exactly this but it's 
     // specifically designed for pixi.js and doesn't work with anything else...
     // i apologize for the horrible code.
-    let newX = this.pos.x + this.vel.x
-    let newY = this.pos.y + this.vel.y
+    let newX = this.pos.x + this.vel.x * (dt*60)
+    let newY = this.pos.y + this.vel.y * (dt*60)
     
     // walls...
     if (newX+this.r >= width){
@@ -35,32 +35,33 @@ function Ball(x=width/2,y=height-9){
     if (newY >= height-this.r){
       if(!firstBall){firstBall=this}else{this.pos.set(firstBall.pos.x, firstBall.pos.y)}
       doneBalls++
-      newY = height - this.r
+      this.pos.y = height - this.r
       return
     }
     
     // blocks.....
     // yes. it's bad.
+    let n = this.vel.copy().mult(dt*60).mag()
     for (block of blocks){
       let b = board
       let x = block.x/60
       let y = block.y/60
-      if (newY+this.r > block.y && newY-this.r < block.y+60 && newX-this.r < block.x+60 && newX-this.r > block.x+50 && !b[x+1][y]){
+      if (newY+this.r > block.y && newY-this.r < block.y+60 && newX-this.r < block.x+60 && newX-this.r > block.x+60-n && !b[x+1][y]){
         this.vel.x = abs(this.vel.x)
         newX = block.x+60+this.r
         block.value--;
       }
-      if (newY+this.r > block.y && newY-this.r < block.y+60 && newX+this.r > block.x && newX+this.r<block.x+10 && !b[x-1][y]){
+      if (newY+this.r > block.y && newY-this.r < block.y+60 && newX+this.r > block.x && newX+this.r<block.x+n && !b[x-1][y]){
         this.vel.x = -abs(this.vel.x)
         newX = block.x - this.r
         block.value--;
       }
-      if (newX+this.r > block.x && newX-this.r < block.x+60 && newY-this.r < block.y+60 && newY-this.r > block.y+50 && !b[x][y+1]){
+      if (newX+this.r > block.x && newX-this.r < block.x+60 && newY-this.r < block.y+60 && newY-this.r > block.y+60-n && !b[x][y+1]){
         this.vel.y = abs(this.vel.y)
         newY = block.y+60+this.r
         block.value--;
       }
-      if (newX+this.r > block.x && newX-this.r < block.x+60 && newY+this.r > block.y && newY+this.r < block.y+10 && !b[x][y-1]){
+      if (newX+this.r > block.x && newX-this.r < block.x+60 && newY+this.r > block.y && newY+this.r < block.y+n && !b[x][y-1]){
         this.vel.y = -abs(this.vel.y)
         newY = block.y - this.r
         block.value--;

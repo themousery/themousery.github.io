@@ -18,11 +18,15 @@ function setup(){
   board = []
   gameOver = false
   movingBlocks = false
+  t = millis()
   newRound()
   newBall()
 }
 
 function draw(){
+  let m = millis()
+  dt = (m-t)/1000
+  t = m
   fill('rgb(22,22,29)')
   rect(-1,-1,width+2,height+2)
   
@@ -37,7 +41,7 @@ function draw(){
   
   else{
     TWEEN.update()
-    if(!moving){drawLine()}else{counter+=0.2}
+    if(!moving){drawLine()}else{counter+=0.2*(dt*60)}
     updateBlocks()
     for (i=points.length-1;i>=0;i--){points[i].draw(i)}
     doneBalls=0
