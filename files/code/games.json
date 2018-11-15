@@ -1,11 +1,6 @@
 {
   "data":[
     {
-      "id":"fourinarow",
-      "name":"Four in a Row",
-      "desc":"the classic game of Four in a Row"
-    },
-    {
       "id":"ball",
       "name":"Ball Game",
       "desc":"shoot balls at boxes"
@@ -15,15 +10,21 @@
       "name":"Sliding Puzzle",
       "desc":"move the tiles to the correct order"
     },
-    {
-      "id":"tictactoe",
-      "name":"Tic Tac Toe",
-      "desc":"classic game of tic tac toe"
-    },
+    
     {
       "id":"tower",
       "name":"Tower",
       "desc":"try to build a tower"
+    },
+    {
+      "id":"fourinarow",
+      "name":"Four in a Row",
+      "desc":"the classic game of Four in a Row"
+    },
+    {
+      "id":"tictactoe",
+      "name":"Tic Tac Toe",
+      "desc":"classic game of tic tac toe"
     },
     {
       "id":"livingart",
