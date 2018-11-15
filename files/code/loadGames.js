@@ -10,4 +10,9 @@ window.onload = function(){
       a.appendTo("#games") // put the container in the document
     });
   });
+  // only show the container when the images have loaded
+  a = $("<img/>")
+    .on('load', function() {$("#games").removeClass("hidden");$("#skeleton").remove()})
+    .on('error', function() { console.log("error loading image"); })
+    .attr("src", 'thumbs/matching.png');
 }

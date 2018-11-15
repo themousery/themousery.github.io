@@ -18,20 +18,21 @@
   
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-103978410-1"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-103978410-1');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-103978410-1');</script>
 </head>
 
 <body>
-  <img src="/files/images/banner_november.png">
-  <span class="links">
-    <a href="https://twitter.com/themousery">Twitter</a> •
-    <a href="https://github.com/themousery">Github</a> •
-    <a href="https://themousery.itch.io/">Itch.io</a> •
-    <a href='https://www.youtube.com/channel/UCxRzm1vYuHh834xwR3GnxQA'>YouTube</a> •
-    <a href="https://discord.gg/Pv2RpVE">Discord</a>
-  </span>
+  <img src="/files/images/banner_november.png"/>
+  <ul class="links">
+    <li><a href="https://twitter.com/themousery">Twitter</a></li>
+    <li><a href="https://github.com/themousery">Github</a></li>
+    <li><a href="https://themousery.itch.io/">Itch.io</a></li>
+    <li><a href='https://www.youtube.com/channel/UCxRzm1vYuHh834xwR3GnxQA'>YouTube</a></li>
+    <li><a href="https://discord.gg/Pv2RpVE">Discord</a></li>
+  </ul>
   <hr>
-  <div class="container" id="games">
-  </div>
+  <div class="hidden container" id="games"></div>
+  <div class="container" id="skeleton"></div>
+  <script src="/files/code/skeleton.js"></script>
 </body>
 </html>
