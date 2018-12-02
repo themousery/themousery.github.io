@@ -4,11 +4,12 @@
 }
 
 :root{
-  --text-color:#130E0D
+  --text-color:#4d0000;
+  --background-color:#ff3333;
 }
 
 body{
-  background:#725e54;
+  background:var(--background-color);
   text-align:center;
 }
 
@@ -19,12 +20,19 @@ h1{
 }
 
 hr{
-  border-color:var(--text-color);
+  border:0;
+  background-color:var(--text-color);
+  height:2px;
   width:95%;
-  margin-bottom:6%;
+  margin-top:2%;
+  margin-bottom:4%;
 }
 
 img{
+  display: inline;
+}
+
+img.banner{
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -47,7 +55,7 @@ li{
 }
 
 li + li:before {
-  content: " • "
+  content: "  "
 }
 
 .links{
@@ -58,6 +66,7 @@ li + li:before {
   font-size:2vw;
   margin-top:1.5%;
   margin-bottom:1%;
+  max-width:100%;
 }
 
 .container{
