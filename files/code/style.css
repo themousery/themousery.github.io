@@ -4,8 +4,8 @@
 }
 
 :root{
-  --text-color:#4d0000;
-  --background-color:#ff3333;
+  --text-color:#616161;
+  --background-color:#ffdab9;
 }
 
 body{
@@ -24,7 +24,7 @@ hr{
   background-color:var(--text-color);
   height:2px;
   width:95%;
-  margin-top:2%;
+  margin-top:1%;
   margin-bottom:4%;
 }
 
@@ -36,6 +36,7 @@ img.banner{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom:0.5%;
   max-width:100%;
 }
 

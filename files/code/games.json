@@ -32,11 +32,6 @@
       "desc":"draw, and watch your creation come to life"
     },
     {
-      "id":"pong",
-      "name":"Pong",
-      "desc":"classic game of pong"
-    },
-    {
       "id":"boxes",
       "name":"Dots & Boxes",
       "desc":"the classic game of dots and boxes"
