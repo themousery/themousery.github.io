@@ -1,6 +1,11 @@
 {
   "data":[
     {
+      "id":"bubbles",
+      "name":"Bubble Shooter",
+      "desc":"match bubbles and pop them"
+    },
+    {
       "id":"ball",
       "name":"Ball Game",
       "desc":"shoot balls at boxes"
