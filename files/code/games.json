@@ -1,6 +1,11 @@
 {
   "data":[
     {
+      "id":"etiam",
+      "name": "Etiam",
+      "desc": "Save humanity from hostile enemies"
+    },
+    {
       "id":"bubbles",
       "name":"Bubble Shooter",
       "desc":"match bubbles and pop them"
