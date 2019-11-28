@@ -6,6 +6,11 @@
       "desc": "Save humanity from hostile enemies"
     },
     {
+      "id":"panic",
+      "name": "Panic! at the House Party",
+      "desc": "Your parents are coming home! Quick, clean up the house!"
+    },
+    {
       "id":"bubbles",
       "name":"Bubble Shooter",
       "desc":"match bubbles and pop them"
