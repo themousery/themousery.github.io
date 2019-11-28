@@ -20,6 +20,9 @@ function mouseReleased() {
     for(i=0;i<6;i++) {
       if(mouseX>i*70+i*30 && mouseX<i*70+i*30+60) {
         flood([0,board[0].length-1],board[0][board[0].length-1],i);
+        // print([0,board[0].length-1])
+        // print(board[0][board[0].length-1])
+        // print(i)
         return
       }
     }
@@ -31,24 +34,15 @@ function mousePressed() {
 }
 
 function flood(node, target, replacement) {
-  if (board[node[0]][node[1]] === i) {
-    return
-  }
-  if (board[node[0]][node[1]] !== target){
-    return
-  }
+  print(target, replacement)
+  if (board[node[0]][node[1]] === i) return
+  if (board[node[0]][node[1]] !== target) return
+  
   board[node[0]][node[1]] = replacement;
-  try{
-  flood([node[0]+1,node[1]],target,replacement);
-  }catch(err){}
-  try{
-  flood([node[0]-1,node[1]],target,replacement);
-  }catch(err){}
-  try{
-  flood([node[0],node[1]+1],target,replacement);
-  }catch(err){}
-  try{
-  flood([node[0],node[1]-1],target,replacement);
-  }catch(err){}
+  
+  try{ flood([node[0]+1,node[1]],target,replacement); }catch(err){}
+  try{ flood([node[0]-1,node[1]],target,replacement); }catch(err){}
+  try{ flood([node[0],node[1]+1],target,replacement); }catch(err){}
+  try{ flood([node[0],node[1]-1],target,replacement); }catch(err){}
   return
 }
